@@ -9,7 +9,7 @@ const books = Array.from({ length: 8 }, (_, index) => ({
 
 export default function PortfolioGallery() {
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white section-y">
       <Container>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6 md:gap-8">
           {books.map((book, index) => (

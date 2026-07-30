@@ -49,7 +49,7 @@ export default function Contact() {
   const { handleSubmit, isLoading, isSuccess, errorMessage } = useLeadForm("contact-section");
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white section-y">
       <Container>
         <div className="flex flex-col items-start gap-3.5">
           <Reveal variant="fade">

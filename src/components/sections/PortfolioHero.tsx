@@ -13,7 +13,7 @@ export default function PortfolioHero({
   description,
 }: PortfolioHeroProps) {
   return (
-    <section className="bg-primary py-14 lg:py-50">
+    <section className="bg-primary section-y-hero-tall">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-6 text-center">
           <Reveal variant="up">

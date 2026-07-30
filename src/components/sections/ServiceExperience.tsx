@@ -17,7 +17,7 @@ export default function ServiceExperience({
   imageAlt,
 }: ServiceExperienceProps) {
   return (
-    <section className="relative overflow-hidden bg-primary py-12 sm:py-16 lg:py-20">
+    <section className="relative overflow-hidden bg-primary section-y">
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="relative z-10 flex flex-col gap-5 sm:gap-6">

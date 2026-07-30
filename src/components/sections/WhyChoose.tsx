@@ -16,7 +16,7 @@ export type WhyChooseProps = {
 
 export default function WhyChoose({ title, description, cards }: WhyChooseProps) {
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white section-y">
       <Container>
         <div className="mx-auto flex max-w-3xl flex-col items-center gap-4 text-center">
           <Reveal variant="up">

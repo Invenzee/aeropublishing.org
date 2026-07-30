@@ -13,11 +13,31 @@ const books = Array.from({ length: 9 }, (_, index) => ({
   caption: `Published Book ${index + 1}`,
 }));
 
-const RADIUS = 600;
+const DESKTOP_RADIUS = 600;
+const MOBILE_RADIUS = 260;
 const DEG_INT = 360 / books.length;
 const AUTOPLAY_MS = 2500;
 
+function useCarouselRadius() {
+  const [radius, setRadius] = useState(MOBILE_RADIUS);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(max-width: 767px)");
+
+    const updateRadius = () => {
+      setRadius(mediaQuery.matches ? MOBILE_RADIUS : DESKTOP_RADIUS);
+    };
+
+    updateRadius();
+    mediaQuery.addEventListener("change", updateRadius);
+    return () => mediaQuery.removeEventListener("change", updateRadius);
+  }, []);
+
+  return radius;
+}
+
 export default function Portfolio() {
+  const radius = useCarouselRadius();
   const [angle, setAngle] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFocused, setIsFocused] = useState(false);
@@ -78,7 +98,7 @@ export default function Portfolio() {
   }, [next, prev, toggleCaption, toggleFocus]);
 
   return (
-    <section className="overflow-hidden bg-primary py-12 sm:py-16 lg:py-20">
+    <section className="overflow-hidden bg-primary section-y">
       <Container>
         <SectionHeading
           eyebrow="OUR Recent Publications"
@@ -98,7 +118,7 @@ export default function Portfolio() {
               className="portfolio-carousel__spinner"
               style={{
                 transform: `rotateY(${angle}deg)`,
-                transformOrigin: `50% 50% -${RADIUS}px`,
+                transformOrigin: `50% 50% -${radius}px`,
               }}
             >
               {books.map((book, index) => {
@@ -118,7 +138,7 @@ export default function Portfolio() {
                       .join(" ")}
                     style={{
                       transform: `rotateY(-${itemAngle}deg)`,
-                      transformOrigin: `50% 50% -${RADIUS}px`,
+                      transformOrigin: `50% 50% -${radius}px`,
                     }}
                     onClick={() => {
                       if (isCurrent) toggleFocus();

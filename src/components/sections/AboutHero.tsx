@@ -4,7 +4,7 @@ import Reveal from "@/components/ui/Reveal";
 
 export default function AboutHero() {
   return (
-    <section className="relative overflow-hidden bg-primary py-12 sm:py-14 lg:py-20">
+    <section className="relative overflow-hidden bg-primary section-y-about">
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
           <div className="relative z-10 flex flex-col gap-5">

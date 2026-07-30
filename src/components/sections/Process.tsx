@@ -60,7 +60,7 @@ const steps: Step[] = [
 
 export default function Process() {
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white section-y">
       <Container>
         <SectionHeading
           eyebrow="OUR PROCESS"

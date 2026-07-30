@@ -123,7 +123,7 @@ export default function OurMission({
   );
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white section-y">
       <Container>
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-start lg:gap-16">
           <div className={imagePosition === "left" ? "order-1 lg:order-2" : "order-1"}>

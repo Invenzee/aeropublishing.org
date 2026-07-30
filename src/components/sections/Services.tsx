@@ -94,7 +94,7 @@ const services: Service[] = [
 
 export default function Services() {
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white section-y">
       <Container>
         <SectionHeading
           eyebrow="OUR PUBLISHING SERVICES"

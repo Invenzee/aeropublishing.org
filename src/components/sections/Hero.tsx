@@ -68,7 +68,7 @@ export default function Hero({
       </div>
 
       <Container className="relative">
-        <div className="grid gap-10 py-12 md:gap-12 md:py-14 lg:grid-cols-2 lg:gap-16 lg:py-20">
+        <div className="grid gap-10 section-y-content md:gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="flex flex-col items-start gap-5 sm:gap-6 lg:pr-10">
             <Reveal variant="fade" delay={0}>
               <Eyebrow>{eyebrow}</Eyebrow>

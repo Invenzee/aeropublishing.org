@@ -44,7 +44,7 @@ export default function Faq() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   return (
-    <section className="bg-primary py-12 sm:py-16 lg:py-20">
+    <section className="bg-primary section-y">
       <Container>
         <SectionHeading
           eyebrow="How Can We Help yOUR?"

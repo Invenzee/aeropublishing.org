@@ -6,7 +6,7 @@ type PolicyContentProps = {
 
 export default function PolicyContent({ children }: PolicyContentProps) {
   return (
-    <section className="py-12 lg:py-16">
+    <section className="section-y-policy">
       <Container>
         <div className="policy-content mx-auto max-w-3xl">{children}</div>
       </Container>

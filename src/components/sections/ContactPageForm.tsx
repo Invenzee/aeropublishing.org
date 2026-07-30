@@ -13,7 +13,7 @@ export default function ContactPageForm() {
   const { handleSubmit, isLoading, isSuccess, errorMessage } = useLeadForm("contact-page");
 
   return (
-    <section className="bg-white py-12 sm:py-16 lg:py-20">
+    <section className="bg-white section-y">
       <Container>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-end lg:gap-16">
           <div className="flex flex-col gap-4 text-md leading-6 text-black/80">

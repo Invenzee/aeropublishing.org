@@ -15,6 +15,75 @@ body {
   color: #111111;
 }
 
+/* Section spacing — 5px tighter on mobile only */
+.section-y {
+  padding-block: 2.6875rem;
+}
+
+@media (min-width: 640px) {
+  .section-y {
+    padding-block: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y {
+    padding-block: 5rem;
+  }
+}
+
+.section-y-about {
+  padding-block: 2.6875rem;
+}
+
+@media (min-width: 640px) {
+  .section-y-about {
+    padding-block: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y-about {
+    padding-block: 5rem;
+  }
+}
+
+.section-y-hero-tall {
+  padding-block: 3.1875rem;
+}
+
+@media (min-width: 1024px) {
+  .section-y-hero-tall {
+    padding-block: 12.5rem;
+  }
+}
+
+.section-y-policy {
+  padding-block: 2.6875rem;
+}
+
+@media (min-width: 1024px) {
+  .section-y-policy {
+    padding-block: 4rem;
+  }
+}
+
+.section-y-content {
+  padding-block: 2.6875rem;
+}
+
+@media (min-width: 768px) {
+  .section-y-content {
+    padding-block: 3.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-y-content {
+    padding-block: 5rem;
+  }
+}
+
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none;

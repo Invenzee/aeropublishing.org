@@ -33,7 +33,7 @@ export default function ReadyToPublish() {
       </div>
 
       <Container className="relative">
-        <div className="grid gap-10 py-12 sm:gap-12 sm:py-16 lg:gap-16 lg:py-20">
+        <div className="grid gap-10 section-y sm:gap-12 lg:gap-16">
           <div className="flex flex-col items-start gap-5 sm:gap-6 lg:pr-10">
             <Reveal variant="fade">
               <Eyebrow>READY TO PUblish?</Eyebrow>

@@ -55,12 +55,17 @@ export default function Genres() {
 
   const scrollByCard = (direction: 1 | -1) => {
     const track = trackRef.current;
-    if (!track) return;
-    track.scrollBy({ left: direction * track.clientWidth * 0.6, behavior: "smooth" });
+    if (!track?.firstElementChild) return;
+
+    const card = track.firstElementChild as HTMLElement;
+    const gap = 16;
+    const step = card.offsetWidth + gap;
+
+    track.scrollBy({ left: direction * step, behavior: "smooth" });
   };
 
   return (
-    <section className="bg-neutral-100 py-12 sm:py-16 lg:py-20">
+    <section className="bg-neutral-100 section-y">
       <Container>
         <Reveal variant="up">
           <h2 className="text-center text-[2rem] font-bold leading-[1.15] tracking-tight text-black sm:text-4xl lg:text-[50px]">
@@ -68,26 +73,26 @@ export default function Genres() {
           </h2>
         </Reveal>
 
-        <div className="relative mt-8 sm:mt-10">
+        <div className="relative mt-8 overflow-hidden sm:mt-10">
           <button
             type="button"
             aria-label="Previous genres"
             onClick={() => scrollByCard(-1)}
-            className="absolute -left-1 top-1/2 z-10 hidden size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md transition-colors hover:bg-secondary sm:flex md:-left-3"
+            className="absolute left-0 top-1/2 z-10 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md transition-colors hover:bg-secondary sm:size-9 md:-left-3"
           >
             <ChevronLeft className="size-5" />
           </button>
 
           <div
             ref={trackRef}
-            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth"
+            className="no-scrollbar flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth px-9 sm:px-10 md:px-12"
           >
             {genres.map((genre, index) => (
               <Reveal
                 key={genre.title}
                 variant="up"
                 delay={index * 60}
-                className="w-[calc(100%-1rem)] shrink-0 snap-start sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(20%-0.8rem)]"
+                className="w-[calc(50%-0.5rem)] shrink-0 snap-start sm:w-[calc(50%-0.5rem)] md:w-[calc(33.333%-0.667rem)] lg:w-[calc(20%-0.8rem)]"
               >
                 <article className="relative aspect-square overflow-hidden rounded-lg bg-primary">
                   <Image
@@ -112,7 +117,7 @@ export default function Genres() {
             type="button"
             aria-label="Next genres"
             onClick={() => scrollByCard(1)}
-            className="absolute -right-1 top-1/2 z-10 hidden size-9 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md transition-colors hover:bg-secondary sm:flex md:-right-3"
+            className="absolute right-0 top-1/2 z-10 flex size-8 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-primary text-white shadow-md transition-colors hover:bg-secondary sm:size-9 md:-right-3"
           >
             <ChevronRight className="size-5" />
           </button>
