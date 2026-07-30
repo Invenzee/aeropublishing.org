@@ -1,0 +1,148 @@
+"use client";
+
+import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
+import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
+import SectionHeading from "@/components/ui/SectionHeading";
+import "./portfolio-carousel.css";
+
+const books = Array.from({ length: 9 }, (_, index) => ({
+  src: `/cover-${index + 1}.webp`,
+  alt: `Published book cover ${index + 1}`,
+  caption: `Published Book ${index + 1}`,
+}));
+
+const RADIUS = 600;
+const DEG_INT = 360 / books.length;
+const AUTOPLAY_MS = 2500;
+
+export default function Portfolio() {
+  const [angle, setAngle] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFocused, setIsFocused] = useState(false);
+  const [captionVisible, setCaptionVisible] = useState(false);
+
+  const spin = useCallback((direction: -1 | 1) => {
+    setIsFocused(false);
+    setCaptionVisible(false);
+    setAngle((current) => current + direction * DEG_INT);
+    setCurrentIndex((current) => {
+      const next = current + direction;
+      if (next >= books.length) return 0;
+      if (next < 0) return books.length - 1;
+      return next;
+    });
+  }, []);
+
+  const next = useCallback(() => spin(1), [spin]);
+  const prev = useCallback(() => spin(-1), [spin]);
+
+  const toggleFocus = useCallback(() => {
+    setIsFocused((current) => !current);
+  }, []);
+
+  const toggleCaption = useCallback(() => {
+    setCaptionVisible((current) => !current);
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setInterval(next, AUTOPLAY_MS);
+    return () => window.clearInterval(timer);
+  }, [next]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      switch (event.which) {
+        case 37:
+          prev();
+          break;
+        case 39:
+          next();
+          break;
+        case 90:
+          toggleFocus();
+          break;
+        case 67:
+          toggleCaption();
+          break;
+        default:
+          return;
+      }
+
+      event.preventDefault();
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [next, prev, toggleCaption, toggleFocus]);
+
+  return (
+    <section className="overflow-hidden bg-primary py-12 sm:py-16 lg:py-20">
+      <Container>
+        <SectionHeading
+          eyebrow="OUR Recent Publications"
+          tone="light"
+          title={
+            <>
+              Books We&apos;ve Helped
+              <br />
+              Bring To Life
+            </>
+          }
+        />
+
+        <Reveal variant="scale" delay={120} className="relative mx-auto mt-10 w-full max-w-[1140px] sm:mt-12">
+          <div className="portfolio-carousel">
+            <figure
+              className="portfolio-carousel__spinner"
+              style={{
+                transform: `rotateY(${angle}deg)`,
+                transformOrigin: `50% 50% -${RADIUS}px`,
+              }}
+            >
+              {books.map((book, index) => {
+                const itemAngle = index * DEG_INT;
+                const isCurrent = index === currentIndex;
+
+                return (
+                  <figure
+                    key={book.src}
+                    className={[
+                      "portfolio-carousel__item",
+                      isCurrent ? "current" : "",
+                      isCurrent && isFocused ? "focus" : "",
+                      isCurrent && captionVisible ? "caption" : "",
+                    ]
+                      .filter(Boolean)
+                      .join(" ")}
+                    style={{
+                      transform: `rotateY(-${itemAngle}deg)`,
+                      transformOrigin: `50% 50% -${RADIUS}px`,
+                    }}
+                    onClick={() => {
+                      if (isCurrent) toggleFocus();
+                    }}
+                  >
+                    <Image
+                      src={book.src}
+                      alt={book.alt}
+                      width={500}
+                      height={750}
+                      quality={75}
+                      loading={index === 0 ? "eager" : "lazy"}
+                      className="aspect-[2/3] w-full object-cover"
+                    />
+                    <figcaption className="portfolio-carousel__caption">
+                      {book.caption}
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </figure>
+          </div>
+        </Reveal>
+      </Container>
+    </section>
+  );
+}

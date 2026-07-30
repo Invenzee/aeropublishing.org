@@ -1,26 +1,235 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@theme {
+  --color-primary: #3f3774;
+  --color-primary-light: #4b428a;
+  --color-primary-dark: #332c60;
+  --color-secondary: #e96659;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #111111;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Button hover: fill slides in from the right */
+.btn-hover {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  overflow: hidden;
+  isolation: isolate;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.35s ease;
+}
+
+.btn-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  transform: scaleX(0);
+  transform-origin: right center;
+  transition: transform 0.35s ease;
+  z-index: 1;
+}
+
+.btn-hover:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-hover-content {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.btn-hover.w-full .btn-hover-content {
+  width: 100%;
+}
+
+.btn-hover-primary {
+  background-color: var(--color-primary);
+  color: #fff;
+}
+
+.btn-hover-primary::before {
+  background-color: var(--color-secondary);
+}
+
+.btn-hover-secondary {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.btn-hover-secondary::before {
+  background-color: var(--color-primary);
+}
+
+.btn-hover-secondary-on-primary {
+  background-color: var(--color-secondary);
+  color: #fff;
+}
+
+.btn-hover-secondary-on-primary::before {
+  background-color: #fff;
+}
+
+.btn-hover-secondary-on-primary:hover {
+  color: var(--color-secondary);
+}
+
+.btn-hover-light {
+  background-color: #fff;
+  color: var(--color-primary);
+}
+
+.btn-hover-light::before {
+  background-color: var(--color-secondary);
+}
+
+.btn-hover-light:hover {
+  color: #fff;
+}
+
+/* Scroll reveal — subtle, UX-friendly entrances */
+.reveal {
+  opacity: 0;
+  transition-property: opacity, transform;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 650ms;
+  will-change: opacity, transform;
+}
+
+.reveal-up {
+  transform: translate3d(0, 28px, 0);
+}
+
+.reveal-down {
+  transform: translate3d(0, -28px, 0);
+}
+
+.reveal-left {
+  transform: translate3d(-28px, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(28px, 0, 0);
+}
+
+.reveal-fade {
+  transform: none;
+}
+
+.reveal-scale {
+  transform: scale(0.96);
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal-up,
+  .reveal-down,
+  .reveal-left,
+  .reveal-right,
+  .reveal-fade,
+  .reveal-scale {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Mobile canvas drawer */
+.mobile-drawer {
+  transform: translate3d(-100%, 0, 0);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mobile-drawer.is-open {
+  transform: translate3d(0, 0, 0);
+}
+
+.mobile-drawer-backdrop {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.mobile-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Policy / legal page content */
+.policy-content {
+  color: #374151;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.policy-content > * + * {
+  margin-top: 1.25rem;
+}
+
+.policy-content h2 {
+  margin-top: 2.5rem;
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.policy-content h3 {
+  margin-top: 1.5rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #111111;
+}
+
+.policy-content ul {
+  margin-top: 0.75rem;
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.policy-content ul li + li {
+  margin-top: 0.5rem;
+}
+
+.policy-content a {
+  color: var(--color-primary);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+.policy-content a:hover {
+  color: var(--color-secondary);
+}
+
+.policy-content p strong {
+  font-weight: 600;
+  color: #111111;
 }
