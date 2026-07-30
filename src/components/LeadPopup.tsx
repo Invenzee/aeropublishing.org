@@ -78,7 +78,7 @@ export default function LeadPopup() {
         role="dialog"
         aria-modal="true"
         aria-labelledby="lead-popup-title"
-        className="relative w-full max-w-[920px] overflow-hidden rounded-sm bg-white shadow-2xl"
+        className="relative w-full max-w-[920px] overflow-hidden rounded-sm bg-white shadow-2xl max-sm:overflow-auto max-sm:w-full max-sm:max-w-none max-sm:h-[90vh]"
         onClick={(event) => event.stopPropagation()}
       >
         <button
@@ -132,7 +132,7 @@ export default function LeadPopup() {
             <img
               src="/menu-img.png"
               alt="Publish Your Book on Amazon With Aero Publishing"
-              className="absolute bottom-0 left-[50%] w-80 -translate-x-1/2"
+              className="absolute bottom-0 left-[50%] w-80 -translate-x-1/2 max-sm:hidden"
             />
           </div>
 
