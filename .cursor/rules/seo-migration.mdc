@@ -1,0 +1,30 @@
+---
+description: SEO preservation rules for WordPress to Next.js migration
+globs: **/*.{tsx,ts,jsx,js}
+alwaysApply: false
+---
+
+# SEO Migration Requirements
+
+Google does not penalize a platform change if URLs, content, and metadata stay equivalent. Migration losses come from technical mistakes.
+
+## Must preserve (when migrating or building pages)
+
+- Identical URLs (including trailing slash policy)
+- Title tags, meta descriptions, canonical tags, Open Graph tags
+- Heading hierarchy (H1, H2, H3) and internal links
+- Image alt text, structured data (schema), breadcrumbs
+- Correct robots.txt and XML sitemap
+- HTTP 200 or proper 301 redirects for any URL changes
+
+## Avoid
+
+- Changing URLs without 301 redirects
+- `Disallow: /` or leftover `noindex` from staging
+- Altering metadata, headings, or internal linking without reason
+- Blocking crawlers or omitting sitemap submission after launch
+
+## Can improve SEO when done well
+
+- Faster load times, cleaner HTML, better Core Web Vitals
+- Less unnecessary JavaScript, optimized images, better TTFB

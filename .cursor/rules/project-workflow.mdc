@@ -1,0 +1,22 @@
+---
+description: Core project workflow — user provides content and design; implement only what is asked
+alwaysApply: true
+---
+
+# Aero Publishing — Project Workflow
+
+## Scope
+
+- The user provides **content** and **design**. Do not invent copy, layouts, or features unless explicitly requested.
+- **Do only what is asked.** Do not add pages, components, styling, SEO tags, or refactors beyond the current request.
+- Do not proactively add documentation, tests, or extras unless requested.
+
+## Implementation
+
+- Match provided design and content exactly when supplied.
+- Reuse existing patterns in this codebase (Next.js App Router, Tailwind CSS, Lucide React icons).
+- Keep changes minimal and focused.
+
+## WordPress → Next.js migration context
+
+This site replaces a WordPress site. When building or migrating pages, preserve SEO-critical elements (see `seo-migration.mdc`).
