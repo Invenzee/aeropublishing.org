@@ -18,6 +18,25 @@ function isValidEmail(email: string) {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 }
 
+function parseRecipientEmails(value: string) {
+  const emails = value
+    .split(",")
+    .map((email) => email.trim())
+    .filter(Boolean);
+
+  if (emails.length === 0) {
+    throw new Error("CONTACT_EMAIL_TO must include at least one email address.");
+  }
+
+  for (const email of emails) {
+    if (!isValidEmail(email)) {
+      throw new Error(`Invalid recipient email in CONTACT_EMAIL_TO: ${email}`);
+    }
+  }
+
+  return emails;
+}
+
 function buildEmailSubject(data: LeadSubmission) {
   const sourceLabel = FORM_SOURCE_LABELS[data.formSource];
   const campaign = data.marketing.utm_campaign;
@@ -73,7 +92,7 @@ export async function POST(request: Request) {
 
     const gmailUser = getEnv("GMAIL_USER");
     const gmailAppPassword = getEnv("GMAIL_APP_PASSWORD");
-    const contactEmailTo = getEnv("CONTACT_EMAIL_TO");
+    const contactEmailTo = parseRecipientEmails(getEnv("CONTACT_EMAIL_TO"));
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
