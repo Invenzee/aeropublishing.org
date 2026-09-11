@@ -701,7 +701,8 @@ export default function SelfPublishingLpClient() {
       <p className="ftr-blurb">We bring your story to life with expert guidance, from the first outline to the finished book on sale, in stores that can actually order it.</p>
       <p className="ftr-addr">
         <a href="tel:(424) 282-3304">(424) 282-3304</a><br />
-        <a href="mailto:info@aeropublishing.org">info@aeropublishing.org</a>
+        <a href="mailto:info@aeropublishing.org">info@aeropublishing.org</a><br />
+        One Towne Square, Suite 1835, Southfield, MI 48076
       </p>
     </div>
 
@@ -730,11 +731,17 @@ export default function SelfPublishingLpClient() {
   </div>
 
   <div className="shell ftr-legal">
-    <span>Copyright 2026 Aero Publishing. All rights reserved.</span>
+    <span>
+      &copy; 2026 Aero Publishing
+      <br />
+      A brand of SOLAR THIRTY LLC. All Rights Reserved.
+    </span>
     <span>
       <a href="/privacy-policy">Privacy policy</a>
       {'\u00a0'}{'\u00a0'}
       <a href="/terms-and-conditions">Terms and conditions</a>
+      {'\u00a0'}{'\u00a0'}
+      <a href="/return-and-refund-policies">Return and refund policies</a>
     </span>
     <span className="ftr-disc">
       Aero Publishing provides self-publishing and author services. We are not a traditional

@@ -13,14 +13,19 @@ export default function CookbookFooter() {
       <Reveal className="relative z-10 mx-auto grid max-w-[1140px] gap-6 px-4 lg:grid-cols-[180px_1fr_auto] lg:items-center lg:gap-8 lg:px-4">
         <CookbookLogo variant="footer" className="mx-auto lg:mx-0" />
 
-        <p className="mx-auto max-w-[520px] text-center font-poppins text-[14px] leading-[1.7] text-white lg:text-left">
-          Aero Publishing helps authors transform recipe ideas into professional
-          cookbooks that leave a lasting impact on readers. With dedicated
-          editors, designers, illustrators, and marketing experts, we bring your
-          culinary vision to life. From concept to global distribution, we offer
-          end to end cookbook publishing solutions for aspiring and established
-          authors.
-        </p>
+        <div className="mx-auto max-w-[520px] text-center lg:text-left">
+          <p className="font-poppins text-[14px] leading-[1.7] text-white">
+            Aero Publishing helps authors transform recipe ideas into professional
+            cookbooks that leave a lasting impact on readers. With dedicated
+            editors, designers, illustrators, and marketing experts, we bring your
+            culinary vision to life. From concept to global distribution, we offer
+            end to end cookbook publishing solutions for aspiring and established
+            authors.
+          </p>
+          <p className="mt-3 font-poppins text-[14px] leading-[1.7] text-white/90">
+            One Towne Square, Suite 1835, Southfield, MI 48076
+          </p>
+        </div>
 
         <div className="flex w-full flex-col items-center gap-2.5 sm:flex-row sm:justify-center lg:w-auto lg:flex-col lg:items-stretch">
           <a
@@ -39,9 +44,30 @@ export default function CookbookFooter() {
         </div>
       </Reveal>
 
-      <p className="relative z-10 mt-8 text-center font-poppins text-[13px] text-white">
-        Copyright {new Date().getFullYear()} Aero Publishing. All rights reserved.
-      </p>
+      <div className="relative z-10 mt-8 text-center font-poppins text-[13px] leading-relaxed text-white">
+        <p>
+          &copy; 2026 Aero Publishing
+          <br />
+          A brand of SOLAR THIRTY LLC. All Rights Reserved.
+        </p>
+        <p className="mt-2 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-white/85">
+          <a href="/privacy-policy" className="transition-colors hover:text-[#e96659]">
+            Privacy Policy
+          </a>
+          <span aria-hidden className="text-white/40">
+            |
+          </span>
+          <a href="/terms-and-conditions" className="transition-colors hover:text-[#e96659]">
+            Terms &amp; Conditions
+          </a>
+          <span aria-hidden className="text-white/40">
+            |
+          </span>
+          <a href="/return-and-refund-policies" className="transition-colors hover:text-[#e96659]">
+            Return &amp; Refund Policies
+          </a>
+        </p>
+      </div>
     </footer>
   );
 }

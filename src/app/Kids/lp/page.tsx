@@ -5,7 +5,7 @@ import { createPortal } from "react-dom";
 import { AnimatePresence, motion, useInView, useReducedMotion } from "framer-motion";
 import { ScrollReveal, ScrollStagger, ScrollStaggerItem } from "@/components/ScrollReveal";
 import {
-  fadeIn, fadeLeft, fadeRight, motionTransition, motionViewport, scaleIn, staggerContainer, staggerItem,
+  fadeLeft, fadeRight, motionTransition, motionViewport, scaleIn, staggerContainer, staggerItem,
 } from "@/lib/motion";
 import { handleLeadFormSubmit } from "@/lib/submit-form";
 import { OPEN_QUOTE_POPUP_EVENT, openLiveChat, openQuotePopup } from "@/lib/lead-actions";
@@ -37,9 +37,6 @@ const NAV_LINKS = [
   { label: "Services", href: "#services" }, { label: "Portfolio", href: "#portfolio" }, { label: "Pricing", href: "#mid-cta" }, { label: "Contact Us", href: "#contact" },
 ];
 
-const PARTNER_LOGOS = [
-  { src: "/cl-1%20(1).webp", alt: "Penguin Random House" }, { src: "/cl-4%20(1).webp", alt: "Macmillan" }, { src: "/cl-3%20(1).webp", alt: "HarperCollins" }, { src: "/cl-5%20(1).webp", alt: "Hachette" },
-];
 
 const HERO_CHECKS = [
   "End to end children's book publishing from manuscript to finished book", "Custom illustrations matched to your story tone and young readers", "Professional editing, formatting, and global distribution", "Clear pricing with affordable packages at every stage", "A collaborative process that keeps you in control of your vision",
@@ -198,11 +195,7 @@ const FOOTER_QUICK_LINKS = [
   { label: "Home", href: "/" }, { label: "About Us", href: "/about-us" }, { label: "Contact Us", href: "#contact" },
 ];
 
-const FOOTER_ADDRESS = "12508 Center St, South Gate, CA 90280, United States";
-
-const FOOTER_BADGES = {
-  trustpilot: "/book-marketing-lp/trustpilot-1.webp",
-};
+const FOOTER_ADDRESS = "One Towne Square, Suite 1835, Southfield, MI 48076";
 
 const SECTION_PADDING = "py-10 sm:py-16 lg:py-20";
 const SECTION_HEADING =
@@ -869,23 +862,6 @@ export default function ChildrensBookLpPage() {
           </div>
         </section>
 
-        {/* Trust bar */}
-        <section className="border-b border-black bg-white py-6 sm:py-8" aria-label="Publishing partners">
-          <div className={CONTAINER}>
-            <ScrollStagger className="flex flex-wrap items-center justify-center gap-6 sm:justify-between sm:gap-8">
-              {PARTNER_LOGOS.map((logo) => (
-                <ScrollStaggerItem key={logo.src}>
-                  <img
-                    src={logo.src}
-                    alt={logo.alt}
-                    className="h-7 w-auto max-w-[90px] object-contain opacity-80 grayscale transition-all duration-300 hover:scale-105 hover:opacity-100 sm:h-10 sm:max-w-[120px] lg:h-12 lg:max-w-none"
-                  />
-                </ScrollStaggerItem>
-              ))}
-            </ScrollStagger>
-          </div>
-        </section>
-
         {/* Feature focus */}
         <section
           className="bg-[url('/kids-banner.jpg')] bg-cover bg-center bg-no-repeat py-12 sm:py-20 lg:py-28"
@@ -1284,23 +1260,9 @@ export default function ChildrensBookLpPage() {
       </div>
 
       <footer className="pb-0" aria-label="Site footer">
-        {/* Partner logos */}
-        <ScrollReveal variants={fadeIn}>
-          <div style={{ backgroundColor: PURPLE }}>
-            <div className={CONTAINER}>
-              <img
-                src="/childrens-book-lp/footer-top-1.webp"
-                alt="Publishing partners"
-                className="w-full object-contain py-6 sm:py-8 lg:py-10"
-              />
-            </div>
-          </div>
-        </ScrollReveal>
-
-        {/* Main footer */}
         <div className="border-b border-white/15 bg-[#3F3774]">
           <div className={`${CONTAINER} py-8 sm:py-10 lg:py-14`}>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:gap-12">
               <ScrollReveal>
                 <img
                   src={LOGO_SRC}
@@ -1335,29 +1297,32 @@ export default function ChildrensBookLpPage() {
                   ))}
                 </ul>
               </ScrollReveal>
-
-              <ScrollReveal delay={0.15}>
-                <div className="flex flex-wrap items-start gap-6 sm:gap-8 lg:justify-end lg:gap-12">
-                  <img
-                    src={FOOTER_BADGES.trustpilot}
-                    alt="Trustpilot rating"
-                    className="w-20 object-contain transition-transform duration-300 hover:scale-105 sm:w-24"
-                  />
-                  <img
-                    src="/childrens-book-lp/google.webp"
-                    alt="Google Reviews rating"
-                    className="w-20 object-contain transition-transform duration-300 hover:scale-105 sm:w-24"
-                  />
-                </div>
-              </ScrollReveal>
             </div>
           </div>
         </div>
 
-        {/* Copyright */}
         <div className="border-t border-black bg-black py-3 text-center">
-          <p className="text-xs text-white sm:text-sm">
-            Copyright &copy; {new Date().getFullYear()} Aero Publishing. All Rights Reserved.
+          <p className="text-xs leading-relaxed text-white sm:text-sm">
+            &copy; 2026 Aero Publishing
+            <br />
+            A brand of SOLAR THIRTY LLC. All Rights Reserved.
+          </p>
+          <p className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-white/80 sm:text-sm">
+            <a href="/privacy-policy" className="transition-colors hover:text-[#E96659]">
+              Privacy Policy
+            </a>
+            <span aria-hidden className="text-white/40">
+              |
+            </span>
+            <a href="/terms-and-conditions" className="transition-colors hover:text-[#E96659]">
+              Terms &amp; Conditions
+            </a>
+            <span aria-hidden className="text-white/40">
+              |
+            </span>
+            <a href="/return-and-refund-policies" className="transition-colors hover:text-[#E96659]">
+              Return &amp; Refund Policies
+            </a>
           </p>
         </div>
       </footer>

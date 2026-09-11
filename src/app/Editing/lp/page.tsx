@@ -16,7 +16,7 @@ import {
 const PHONE_DISPLAY = "(424) 282-3304";
 const PHONE_HREF = "tel:(424) 282-3304";
 const EMAIL = "info@aeropublishing.org";
-const ADDRESS = "12508 Center St, South Gate, CA 90280, United States";
+const ADDRESS = "One Towne Square, Suite 1835, Southfield, MI 48076";
 const LOGO_SRC = "/logo.webp";
 const POPUP_DELAY_MS = 60000;
 const POPUP_SESSION_KEY = "book-editing-lp-popup-dismissed";
@@ -46,9 +46,6 @@ const SERVICE_OPTIONS = [
   "Developmental Editing", "Line & Copy Editing", "Proofreading", "Formatting & Layout", "Full Editing Package",
 ];
 
-const PARTNER_LOGOS = [
-  { src: "/cl-1%20(1).webp", alt: "Simon & Schuster" }, { src: "/cl-3%20(1).webp", alt: "Penguin Random House" }, { src: "/cl-4%20(1).webp", alt: "Macmillan" }, { src: "/cl-5%20(1).webp", alt: "HarperCollins" },
-];
 
 const HERO_CHECKS = [
   "Starts from $0.03 / word", "Industry Specific Editors", "10+ years of experience", "Trusted by 400+ authors",
@@ -1004,22 +1001,6 @@ export default function BookEditingLpPage() {
           </div>
         </section>
 
-        {/* Trust bar */}
-        <section className="border-y border-black/10 bg-white py-6 sm:py-8" aria-label="Publishing partners">
-          <div className={CONTAINER}>
-            <div className="flex flex-wrap items-center justify-center gap-6 sm:justify-between sm:gap-8 lg:gap-10">
-              {PARTNER_LOGOS.map((logo) => (
-                <img
-                  key={logo.src}
-                  src={logo.src}
-                  alt={logo.alt}
-                  className="h-7 w-auto max-w-[90px] object-contain opacity-70 grayscale transition-all duration-300 hover:scale-105 hover:opacity-100 sm:h-9 sm:max-w-[140px] lg:h-10"
-                />
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* What makes us better */}
         <section className={SECTION_PADDING} aria-labelledby="be-better-heading">
           <div className={CONTAINER}>
@@ -1230,9 +1211,27 @@ export default function BookEditingLpPage() {
                 We Would Love To Hear From You
               </h2>
               <ContactLeadForm id="contact-form" />
-              <p className="mt-10 text-xs text-[#777] sm:mt-20">
-                Copyright &copy; {new Date().getFullYear()} Aero Publishing. All Rights
-                Reserved.
+              <p className="mt-10 text-xs leading-relaxed text-[#777] sm:mt-20">
+                &copy; 2026 Aero Publishing
+                <br />
+                A brand of SOLAR THIRTY LLC. All Rights Reserved.
+              </p>
+              <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#777]">
+                <a href="/privacy-policy" className="transition-colors hover:text-[#3F3774]">
+                  Privacy Policy
+                </a>
+                <span aria-hidden className="text-[#ccc]">
+                  |
+                </span>
+                <a href="/terms-and-conditions" className="transition-colors hover:text-[#3F3774]">
+                  Terms &amp; Conditions
+                </a>
+                <span aria-hidden className="text-[#ccc]">
+                  |
+                </span>
+                <a href="/return-and-refund-policies" className="transition-colors hover:text-[#3F3774]">
+                  Return &amp; Refund Policies
+                </a>
               </p>
             </MotionColumn>
 
@@ -1314,23 +1313,6 @@ export default function BookEditingLpPage() {
                         <social.icon className="h-3.5 w-3.5" aria-hidden="true" />
                       </a>
                     ))}
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex flex-wrap items-center gap-6 pt-4 sm:gap-8">
-                    <img
-                      src="/book-marketing-lp/trustpilot-1.webp"
-                      alt="Trustpilot rating"
-                      className="w-20 object-contain transition-transform duration-300 hover:scale-105 sm:w-24"
-                      loading="lazy"
-                    />
-                    <img
-                      src="/book-marketing-lp/pay-1.webp"
-                      alt="Accepted payment methods"
-                      className="w-36 object-contain transition-transform duration-300 hover:scale-105 sm:w-44 md:w-56"
-                      loading="lazy"
-                    />
                   </div>
                 </div>
               </div>

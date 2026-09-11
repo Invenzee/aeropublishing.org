@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import CookbookHeader from "./CookbookHeader";
 import CookbookHero from "./CookbookHero";
-import CookbookPartners from "./CookbookPartners";
 import CookbookAbout from "./CookbookAbout";
 import CookbookFeatures from "./CookbookFeatures";
 import CookbookOccasions from "./CookbookOccasions";
@@ -41,7 +40,6 @@ export default function CookbookLandingPage() {
     <main className="min-h-screen overflow-x-clip scroll-smooth bg-white text-black">
       <CookbookHeader />
       <CookbookHero />
-      <CookbookPartners />
       <CookbookAbout />
       <CookbookFeatures />
       <CookbookOccasions />
