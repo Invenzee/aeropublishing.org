@@ -10,6 +10,11 @@
   --font-display: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
+@theme inline {
+  --font-poppins: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
+  --font-syne: var(--font-syne), ui-sans-serif, system-ui, sans-serif;
+}
+
 body {
   background: #ffffff;
   color: #111111;
