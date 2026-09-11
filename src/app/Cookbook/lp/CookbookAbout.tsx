@@ -21,16 +21,16 @@ export default function CookbookAbout() {
     <section id="about" className="overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto grid max-w-[1140px] items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-4">
         <Reveal className="max-w-[520px]" x={-24}>
-          <p className="font-poppins text-[14px] text-black">
+          <p className="font-sans text-[14px] text-black">
             About Aero Publishing
           </p>
-          <h2 className="mt-2 font-syne text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] sm:text-[48px] lg:text-[60px]">
+          <h2 className="mt-2 font-sans text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] sm:text-[48px] lg:text-[60px]">
             <span className="text-[#3f3774]">Aero</span>{" "}
             <span className="text-[#e96659]">Publishing</span>
             <br />
             <span className="text-[#e96659]">For Cookbooks</span>
           </h2>
-          <p className="mt-4 font-poppins text-[14px] leading-[1.7] text-black">
+          <p className="mt-4 font-sans text-[14px] leading-[1.7] text-black">
             Aero Publishing offers complete cookbook publishing services for
             homestyle recipes, restaurant collections, family compilations, and
             global cuisines. Our team guides you through cookbook self publishing

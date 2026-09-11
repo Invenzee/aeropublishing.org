@@ -1,3 +1,9 @@
-interface Window {
-  zE?: (...args: unknown[]) => void;
+export {};
+
+type ZeApi = (...args: unknown[]) => void;
+
+declare global {
+  interface Window {
+    zE?: ZeApi;
+  }
 }

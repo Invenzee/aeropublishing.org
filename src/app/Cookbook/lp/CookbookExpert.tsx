@@ -6,14 +6,14 @@ export default function CookbookExpert() {
     <section className="overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto grid max-w-[1140px] items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-8 lg:px-4">
         <Reveal className="max-w-[520px]" x={-24}>
-          <p className="font-poppins text-[14px] text-black">
+          <p className="font-sans text-[14px] text-black">
             Why Choose Aero Publishing
           </p>
-          <h2 className="mt-2 font-syne text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] text-[#e96659] sm:text-[48px] lg:text-[60px]">
+          <h2 className="mt-2 font-sans text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] text-[#e96659] sm:text-[48px] lg:text-[60px]">
             <span className="text-[#3f3774]">Expert</span> Support From
             First Draft to Bestseller
           </h2>
-          <p className="mt-4 font-poppins text-[14px] leading-[1.7] text-black">
+          <p className="mt-4 font-sans text-[14px] leading-[1.7] text-black">
             Aero Publishing offers complete cookbook publishing solutions tailored
             to your goals. Our team helps you refine recipes, design eye catching
             layouts, and publish your cookbook worldwide. With professional food

@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Figtree, Playfair_Display, Poppins, Syne } from "next/font/google";
+import { Figtree, Playfair_Display } from "next/font/google";
 import SiteChrome from "@/components/layout/SiteChrome";
 import MarketingAttributionCapture from "@/components/MarketingAttributionCapture";
+import ZendeskWidget from "@/components/ZendeskWidget";
 import "./globals.css";
 
 const figtree = Figtree({
@@ -13,19 +14,6 @@ const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
   style: ["normal", "italic"],
-});
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-  display: "swap",
-});
-
-const syne = Syne({
-  variable: "--font-syne",
-  subsets: ["latin"],
-  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -43,11 +31,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${playfairDisplay.variable} ${poppins.variable} ${syne.variable} h-full antialiased`}
+      className={`${figtree.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <SiteChrome>{children}</SiteChrome>
         <MarketingAttributionCapture />
+        <ZendeskWidget />
       </body>
     </html>
   );

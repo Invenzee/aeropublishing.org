@@ -2,26 +2,10 @@
 
 import { useCallback, useRef, useState, type CSSProperties } from "react";
 import Image from "next/image";
-import { Manrope, Source_Serif_4 } from "next/font/google";
 import { useSelfPubEffects } from "./useSelfPubEffects";
 import LeadForm from "./LeadForm";
 import PricingPopup from "./PricingPopup";
 import SelfPublishingLeadPopup from "./SelfPublishingLeadPopup";
-
-const manrope = Manrope({
-  subsets: ["latin"],
-  weight: ["500", "600", "700", "800"],
-  variable: "--sp-fh",
-  display: "swap",
-});
-
-const sourceSerif = Source_Serif_4({
-  subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  style: ["normal", "italic"],
-  variable: "--sp-fb",
-  display: "swap",
-});
 
 const TESTIMONIALS = [
   {
@@ -56,12 +40,12 @@ export default function SelfPublishingLpClient() {
   return (
     <div
       ref={rootRef}
-      className={`sp-lp sp-lp-root ${manrope.variable} ${sourceSerif.variable} ${manrope.className}`}
+      className="sp-lp sp-lp-root font-sans"
       style={
         {
-          ["--fh"]: "var(--sp-fh), system-ui, sans-serif",
-          ["--fb"]: "var(--sp-fb), Georgia, serif",
-          fontFamily: "var(--fb)",
+          ["--fh"]: "var(--font-figtree), ui-sans-serif, system-ui, sans-serif",
+          ["--fb"]: "var(--font-figtree), ui-sans-serif, system-ui, sans-serif",
+          fontFamily: "var(--fh)",
         } as CSSProperties
       }
     >
@@ -186,7 +170,7 @@ export default function SelfPublishingLpClient() {
         <rect x="8" y="8" width="86" height="112" rx="8" fill="#fff" fillOpacity=".08"/>
         <rect x="0" y="0" width="86" height="112" rx="8" fill="#fff" fillOpacity=".14" stroke="rgba(255,255,255,.28)"/>
         <g stroke="rgba(255,255,255,.45)" strokeWidth="3" strokeLinecap="round"><path d="M16 24h54M16 38h54M16 52h38M16 66h54M16 80h30"/></g>
-        <text x="43" y="134" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="Manrope,sans-serif" fontSize="12" fontWeight="700">Your draft</text>
+        <text x="43" y="134" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="inherit" fontSize="12" fontWeight="700">Your draft</text>
       </g>
 
       <g transform="translate(300,26)">
@@ -195,14 +179,14 @@ export default function SelfPublishingLpClient() {
         <path d="M25 30l4 4 7-8" stroke="#fff" strokeWidth="2.4" strokeLinecap="round" fill="none"/>
         <g stroke="rgba(255,255,255,.4)" strokeWidth="3" strokeLinecap="round"><path d="M54 26h72M54 38h50"/></g>
         <g stroke="rgba(255,255,255,.32)" strokeWidth="3" strokeLinecap="round"><path d="M20 62h110M20 76h74"/></g>
-        <text x="75" y="118" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="Manrope,sans-serif" fontSize="12" fontWeight="700">Edited and designed</text>
+        <text x="75" y="118" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="inherit" fontSize="12" fontWeight="700">Edited and designed</text>
       </g>
 
       <g transform="translate(600,30)">
         <rect x="0" y="10" width="62" height="86" rx="8" fill="url(#pg1)" fillOpacity=".75"/>
         <rect x="70" y="22" width="54" height="74" rx="8" fill="url(#pg2)" fillOpacity=".8"/>
         <rect x="132" y="34" width="46" height="62" rx="8" fill="url(#pg3)" fillOpacity=".85"/>
-        <text x="89" y="118" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="Manrope,sans-serif" fontSize="12" fontWeight="700">Print, ebook, audio</text>
+        <text x="89" y="118" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="inherit" fontSize="12" fontWeight="700">Print, ebook, audio</text>
       </g>
 
       <g transform="translate(900,44)">
@@ -210,7 +194,7 @@ export default function SelfPublishingLpClient() {
         <circle cx="70" cy="52" r="28" fill="url(#pg1)" fillOpacity=".3"/>
         <path d="M70 24v56M42 52h56" stroke="rgba(255,255,255,.5)" strokeWidth="2"/>
         <ellipse cx="70" cy="52" rx="14" ry="28" fill="none" stroke="rgba(255,255,255,.5)" strokeWidth="2"/>
-        <text x="70" y="120" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="Manrope,sans-serif" fontSize="12" fontWeight="700">On sale worldwide</text>
+        <text x="70" y="120" textAnchor="middle" fill="rgba(233,241,251,.75)" fontFamily="inherit" fontSize="12" fontWeight="700">On sale worldwide</text>
       </g>
     </svg>
   </div>
@@ -736,11 +720,9 @@ export default function SelfPublishingLpClient() {
       <br />
       A brand of SOLAR THIRTY LLC. All Rights Reserved.
     </span>
-    <span>
+    <span className="ftr-legal-links">
       <a href="/privacy-policy">Privacy policy</a>
-      {'\u00a0'}{'\u00a0'}
       <a href="/terms-and-conditions">Terms and conditions</a>
-      {'\u00a0'}{'\u00a0'}
       <a href="/return-and-refund-policies">Return and refund policies</a>
     </span>
     <span className="ftr-disc">

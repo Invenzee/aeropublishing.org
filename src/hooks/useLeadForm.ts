@@ -54,8 +54,8 @@ export function useLeadForm(formSource: LeadFormSource) {
         throw new Error(data.error ?? "Unable to send your message. Please try again.");
       }
 
-      setStatus("success");
       form.reset();
+      window.location.href = "/thank-you";
     } catch (error) {
       setStatus("error");
       setErrorMessage(

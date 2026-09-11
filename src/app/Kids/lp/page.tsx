@@ -1307,20 +1307,20 @@ export default function ChildrensBookLpPage() {
             <br />
             A brand of SOLAR THIRTY LLC. All Rights Reserved.
           </p>
-          <p className="mt-1.5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-white/80 sm:text-sm">
-            <a href="/privacy-policy" className="transition-colors hover:text-[#E96659]">
+          <p className="mt-1.5 flex flex-col items-center gap-2 text-xs text-white/80 sm:flex-row sm:flex-wrap sm:justify-center sm:text-sm">
+            <a href="/privacy-policy" className="whitespace-nowrap transition-colors hover:text-[#E96659]">
               Privacy Policy
             </a>
-            <span aria-hidden className="text-white/40">
+            <span aria-hidden className="mx-3 hidden text-white/40 sm:inline">
               |
             </span>
-            <a href="/terms-and-conditions" className="transition-colors hover:text-[#E96659]">
+            <a href="/terms-and-conditions" className="whitespace-nowrap transition-colors hover:text-[#E96659]">
               Terms &amp; Conditions
             </a>
-            <span aria-hidden className="text-white/40">
+            <span aria-hidden className="mx-3 hidden text-white/40 sm:inline">
               |
             </span>
-            <a href="/return-and-refund-policies" className="transition-colors hover:text-[#E96659]">
+            <a href="/return-and-refund-policies" className="whitespace-nowrap transition-colors hover:text-[#E96659]">
               Return &amp; Refund Policies
             </a>
           </p>

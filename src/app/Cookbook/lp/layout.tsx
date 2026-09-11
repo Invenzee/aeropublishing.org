@@ -6,7 +6,7 @@ export default function CookbookLpLayout({
   return (
     <>
       <style>{`html { scroll-behavior: smooth; }`}</style>
-      {children}
+      <div className="font-sans">{children}</div>
     </>
   );
 }

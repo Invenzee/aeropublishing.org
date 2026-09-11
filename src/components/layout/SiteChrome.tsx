@@ -28,6 +28,8 @@ export default function SiteChrome({
     return <>{children}</>;
   }
 
+  const hideLeadPopup = pathname?.toLowerCase() === "/thank-you";
+
   return (
     <>
       <a
@@ -41,7 +43,7 @@ export default function SiteChrome({
         {children}
       </main>
       <Footer />
-      <LeadPopupLoader />
+      {hideLeadPopup ? null : <LeadPopupLoader />}
     </>
   );
 }

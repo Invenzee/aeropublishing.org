@@ -68,10 +68,10 @@ export default function CookbookFeatures() {
               </div>
 
               <div className="absolute -bottom-20 left-1/2 flex h-[150px] w-4/5 -translate-x-1/2 flex-col items-center justify-center rounded-full border-[4px] border-[#e96659] bg-white text-center sm:border-[5px]">
-                <p className="font-syne text-[12px] capitalize leading-[1.2] text-black">
+                <p className="font-sans text-[12px] capitalize leading-[1.2] text-black">
                   {feature.line1}
                 </p>
-                <p className="mt-0.5 font-syne text-[20px] font-bold capitalize leading-[1.15] text-black sm:text-[22px]">
+                <p className="mt-0.5 font-sans text-[20px] font-bold capitalize leading-[1.15] text-black sm:text-[22px]">
                   {feature.line2}
                 </p>
               </div>

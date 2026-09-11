@@ -29,7 +29,7 @@ export default function CookbookHeader() {
             <Link
               key={item.name}
               href={item.href}
-              className="font-poppins text-[14px] font-semibold text-white transition-colors hover:text-[#e96659]"
+              className="font-sans text-[14px] font-semibold text-white transition-colors hover:text-[#e96659]"
             >
               {item.name}
             </Link>
@@ -38,7 +38,7 @@ export default function CookbookHeader() {
 
         <a
           href="#hire-form"
-          className="hidden h-10 items-center justify-center rounded-full bg-[#e96659] px-5 font-syne text-[15px] font-bold text-white transition-all duration-300 hover:opacity-90 hover:brightness-110 active:scale-[0.98] sm:inline-flex"
+          className="hidden h-10 items-center justify-center rounded-full bg-[#e96659] px-5 font-sans text-[15px] font-bold text-white transition-all duration-300 hover:opacity-90 hover:brightness-110 active:scale-[0.98] sm:inline-flex"
         >
           Get Started
         </a>
@@ -68,7 +68,7 @@ export default function CookbookHeader() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="font-poppins text-base font-semibold text-white transition-colors hover:text-[#e96659]"
+                  className="font-sans text-base font-semibold text-white transition-colors hover:text-[#e96659]"
                   onClick={() => setOpen(false)}
                 >
                   {item.name}
@@ -77,7 +77,7 @@ export default function CookbookHeader() {
               <a
                 href="#hire-form"
                 onClick={() => setOpen(false)}
-                className="mt-2 inline-flex h-10 items-center justify-center rounded-full bg-[#e96659] font-syne text-[15px] font-bold text-white transition-all duration-300 hover:opacity-90"
+                className="mt-2 inline-flex h-10 items-center justify-center rounded-full bg-[#e96659] font-sans text-[15px] font-bold text-white transition-all duration-300 hover:opacity-90"
               >
                 Get Started
               </a>

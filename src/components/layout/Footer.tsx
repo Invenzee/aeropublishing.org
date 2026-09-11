@@ -115,24 +115,36 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/15 py-3">
-          <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-center text-sm text-white/70">
-            <span>&copy; 2026 Aero Publishing</span>
-            <span aria-hidden className="text-white/30">
-              |
+        <div className="border-t border-white/15 py-4">
+          <p className="text-center text-sm leading-relaxed text-white/70">
+            <span className="whitespace-nowrap">&copy; 2026 Aero Publishing</span>
+            <span className="mt-1 block sm:mt-0 sm:inline">
+              <span aria-hidden className="mx-2.5 hidden text-white/30 sm:inline">
+                |
+              </span>
+              A brand of SOLAR THIRTY LLC. All Rights Reserved.
             </span>
-            <span>A brand of SOLAR THIRTY LLC. All Rights Reserved.</span>
-            {legalLinks.map((link) => (
-              <span key={link.label} className="flex items-center gap-3">
-                <span aria-hidden className="text-white/30">
-                  |
-                </span>
-                <Link href={link.href} className="transition-colors hover:text-secondary">
+          </p>
+          <nav
+            aria-label="Legal"
+            className="mt-3 flex flex-col items-center gap-2 sm:mt-2 sm:flex-row sm:flex-wrap sm:justify-center"
+          >
+            {legalLinks.map((link, index) => (
+              <span key={link.label} className="flex items-center">
+                {index > 0 ? (
+                  <span aria-hidden className="mx-3 hidden text-white/30 sm:inline">
+                    |
+                  </span>
+                ) : null}
+                <Link
+                  href={link.href}
+                  className="whitespace-nowrap transition-colors hover:text-secondary"
+                >
                   {link.label}
                 </Link>
               </span>
             ))}
-          </div>
+          </nav>
         </div>
       </Container>
     </footer>

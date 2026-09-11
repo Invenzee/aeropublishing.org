@@ -29,13 +29,13 @@ export default function CookbookOccasions() {
     <section className="overflow-hidden bg-white py-16 sm:py-20 lg:py-24">
       <div className="mx-auto max-w-[1140px] px-4 sm:px-6 lg:px-4">
         <Reveal>
-          <h2 className="mx-auto max-w-[820px] text-center font-syne text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] text-[#3f3774] sm:text-[48px] lg:text-[60px]">
+          <h2 className="mx-auto max-w-[820px] text-center font-sans text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] text-[#3f3774] sm:text-[48px] lg:text-[60px]">
             A cookbook <span className="text-[#e96659]">for every</span>
             <br />
             <span className="text-[#e96659]">occasion</span>
           </h2>
 
-          <p className="mx-auto mt-4 max-w-[820px] text-center font-poppins text-[14px] leading-[1.7] text-black">
+          <p className="mx-auto mt-4 max-w-[820px] text-center font-sans text-[14px] leading-[1.7] text-black">
             Whether you need a gift for family and friends, a showcase for your
             culinary business, a fundraising cookbook for your organization, or a
             corporate team building project, Aero Publishing has a flexible
@@ -97,7 +97,7 @@ export default function CookbookOccasions() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <p className="mx-auto mt-6 max-w-[720px] text-center font-poppins text-[14px] leading-[1.7] text-black">
+          <p className="mx-auto mt-6 max-w-[720px] text-center font-sans text-[14px] leading-[1.7] text-black">
             With professionally designed templates, high quality paper, and six
             binding options, Aero Publishing cookbooks look beautiful and are
             made to last.
@@ -106,7 +106,7 @@ export default function CookbookOccasions() {
           <div className="mt-6 flex justify-center">
             <a
               href="#hire-form"
-              className="inline-flex h-10 items-center justify-center rounded-full bg-[#3f3774] px-6 font-syne text-[15px] font-semibold capitalize text-white transition-all duration-300 hover:opacity-90 hover:brightness-110 active:scale-[0.98]"
+              className="inline-flex h-10 items-center justify-center rounded-full bg-[#3f3774] px-6 font-sans text-[15px] font-semibold capitalize text-white transition-all duration-300 hover:opacity-90 hover:brightness-110 active:scale-[0.98]"
             >
               Get Free Consultation
             </a>

@@ -32,8 +32,8 @@
   --g-navy:linear-gradient(160deg,#332c60 0%,#3f3774 48%,#4b428a 100%);
   --g-amber:linear-gradient(135deg,#e96659,#c75146);
 
-  --fh:"Manrope", system-ui, -apple-system, sans-serif;
-  --fb:"Source Serif 4", Georgia, serif;
+  --fh: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
+  --fb: var(--font-figtree), ui-sans-serif, system-ui, sans-serif;
 
   --shell:1140px;
   --r:16px;
@@ -567,8 +567,13 @@ h1,h2,h3,h4,h5{ font-family:var(--fh); font-weight:800; margin:0; letter-spacing
 .ftr-addr{ font-family:var(--fh); font-size:.89rem; line-height:1.9; margin:16px 0 0; font-weight:500; }
 .ftr-legal{
   border-top:1px solid rgba(255,255,255,.1); padding:22px 0 100px;
-  display:flex; justify-content:space-between; gap:14px; flex-wrap:wrap;
+  display:flex; flex-direction:column; align-items:flex-start; gap:14px;
   font-family:var(--fh); font-size:.81rem;
+}
+.ftr-legal-links{ display:flex; flex-direction:column; gap:8px; }
+.ftr-legal-links a{ white-space:nowrap; }
+@media (min-width:640px){
+  .ftr-legal-links{ flex-direction:row; flex-wrap:wrap; gap:8px 16px; }
 }
 @media (min-width:761px){ .ftr-legal{ padding-bottom:30px; } }
 .ftr-disc{ width:100%; color:rgba(233,241,251,.42); font-size:.79rem; line-height:1.65; }

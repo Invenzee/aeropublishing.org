@@ -36,12 +36,12 @@ export default function CookbookSimple() {
 
       <div className="relative z-10 mx-auto max-w-[1140px] px-4 sm:px-6 lg:px-4">
         <Reveal>
-          <h2 className="mx-auto max-w-[700px] text-center font-syne text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] text-[#3f3774] sm:text-[48px] lg:text-[60px]">
+          <h2 className="mx-auto max-w-[700px] text-center font-sans text-[32px] font-semibold leading-[1.15] tracking-[-0.02em] text-[#3f3774] sm:text-[48px] lg:text-[60px]">
             We Make
             <br />
             <span className="text-[#e96659]">Publishing</span> Simple
           </h2>
-          <p className="mx-auto mt-3 max-w-[560px] text-center font-poppins text-[14px] text-black">
+          <p className="mx-auto mt-3 max-w-[560px] text-center font-sans text-[14px] text-black">
             Flexible cookbook publishing solutions for every need and budget
           </p>
         </Reveal>
@@ -60,10 +60,10 @@ export default function CookbookSimple() {
                   className="object-contain"
                 />
               </div>
-              <h3 className="mt-4 font-syne text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#3f3774] sm:text-[22px]">
+              <h3 className="mt-4 font-sans text-[20px] font-semibold leading-[1.2] tracking-[-0.02em] text-[#3f3774] sm:text-[22px]">
                 {card.title}
               </h3>
-              <p className="mt-2.5 font-poppins text-[14px] leading-[1.7] text-black">
+              <p className="mt-2.5 font-sans text-[14px] leading-[1.7] text-black">
                 {card.body}
               </p>
             </RevealItem>

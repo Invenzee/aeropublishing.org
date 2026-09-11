@@ -15,7 +15,7 @@ const WINE = "#3f3774";
 const ORANGE = "#e96659";
 
 const FIELD =
-  "h-11 w-full border border-[#818181] bg-transparent px-3 font-poppins text-[14px] text-black transition-colors placeholder:font-light placeholder:text-[#a0a0a0] focus:border-[#e96659] focus:outline-none";
+  "h-11 w-full border border-[#818181] bg-transparent px-3 font-sans text-[14px] text-black transition-colors placeholder:font-light placeholder:text-[#a0a0a0] focus:border-[#e96659] focus:outline-none";
 
 export default function CookbookLeadPopup() {
   const reduceMotion = useReducedMotion();
@@ -73,10 +73,10 @@ export default function CookbookLeadPopup() {
         </button>
 
         <div className="flex min-h-[280px] flex-col p-6 pr-12 text-white lg:p-8" style={{ backgroundColor: WINE }}>
-          <h2 id="cbk-popup-heading" className="mb-3 font-syne text-2xl font-bold leading-tight sm:text-3xl">
+          <h2 id="cbk-popup-heading" className="mb-3 font-sans text-2xl font-bold leading-tight sm:text-3xl">
             Publish Your Cookbook with Aero Publishing
           </h2>
-          <div className="mb-6 space-y-3 font-poppins text-sm text-white/90">
+          <div className="mb-6 space-y-3 font-sans text-sm text-white/90">
             <div className="flex items-start gap-3">
               <FaPhone className="mt-1 h-4 w-4 shrink-0" style={{ color: ORANGE }} aria-hidden="true" />
               <div>
@@ -123,7 +123,7 @@ export default function CookbookLeadPopup() {
             />
             <button
               type="submit"
-              className="inline-flex h-10 w-full items-center justify-center rounded-full px-6 font-syne text-[15px] font-bold text-white transition-all duration-300 hover:opacity-90 hover:brightness-110 active:scale-[0.98]"
+              className="inline-flex h-10 w-full items-center justify-center rounded-full px-6 font-sans text-[15px] font-bold text-white transition-all duration-300 hover:opacity-90 hover:brightness-110 active:scale-[0.98]"
               style={{ backgroundColor: ORANGE }}
             >
               Submit Now

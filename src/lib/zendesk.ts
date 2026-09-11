@@ -1,21 +1,31 @@
+export const OPEN_ZENDESK_EVENT = "open-zendesk-chat";
+
 export function openZendeskChat() {
   if (typeof window === "undefined") return;
 
   const open = () => {
-    if (typeof window.zE === "function") {
+    window.dispatchEvent(new Event(OPEN_ZENDESK_EVENT));
+    if (typeof window.zE !== "function") return false;
+    try {
+      window.zE("messenger", "open");
+    } catch {
+      // Classic vs Messaging APIs differ; ignore unsupported commands.
+    }
+    try {
       window.zE("webWidget", "show");
       window.zE("webWidget", "open");
-      return true;
+    } catch {
+      // ignore
     }
-    return false;
+    return true;
   };
 
   if (open()) return;
 
   let tries = 0;
   const interval = window.setInterval(() => {
-    if (open() || ++tries >= 25) {
+    if (open() || ++tries >= 50) {
       window.clearInterval(interval);
     }
-  }, 300);
+  }, 200);
 }

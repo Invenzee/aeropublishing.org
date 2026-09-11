@@ -1216,20 +1216,20 @@ export default function BookEditingLpPage() {
                 <br />
                 A brand of SOLAR THIRTY LLC. All Rights Reserved.
               </p>
-              <p className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#777]">
-                <a href="/privacy-policy" className="transition-colors hover:text-[#3F3774]">
+              <p className="mt-2 flex flex-col items-start gap-2 text-xs text-[#777] sm:flex-row sm:flex-wrap sm:items-center">
+                <a href="/privacy-policy" className="whitespace-nowrap transition-colors hover:text-[#3F3774]">
                   Privacy Policy
                 </a>
-                <span aria-hidden className="text-[#ccc]">
+                <span aria-hidden className="mx-3 hidden text-[#ccc] sm:inline">
                   |
                 </span>
-                <a href="/terms-and-conditions" className="transition-colors hover:text-[#3F3774]">
+                <a href="/terms-and-conditions" className="whitespace-nowrap transition-colors hover:text-[#3F3774]">
                   Terms &amp; Conditions
                 </a>
-                <span aria-hidden className="text-[#ccc]">
+                <span aria-hidden className="mx-3 hidden text-[#ccc] sm:inline">
                   |
                 </span>
-                <a href="/return-and-refund-policies" className="transition-colors hover:text-[#3F3774]">
+                <a href="/return-and-refund-policies" className="whitespace-nowrap transition-colors hover:text-[#3F3774]">
                   Return &amp; Refund Policies
                 </a>
               </p>

@@ -90,14 +90,14 @@ export default function Header() {
     <>
     <header className="sticky top-0 z-50 bg-primary">
       <Container>
-        <div className="flex h-16 items-center justify-between gap-4 sm:h-20 sm:gap-6">
+        <div className="flex h-16 items-center justify-between gap-2 sm:h-20 sm:gap-6">
           <Link href="/" className="shrink-0" aria-label="Aero Publishing home">
             <Image
               src="/logo.webp"
               alt="Aero Publishing"
               width={144}
               height={48}
-              className="h-10 w-auto sm:h-12"
+              className="h-9 w-auto sm:h-12"
               priority
             />
           </Link>
@@ -176,15 +176,26 @@ export default function Header() {
             </Link>
           </nav>
 
-          <div className="flex items-center gap-3">
-            <Button
+          <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+            <a
               href={PHONE_HREF}
-              variant="secondary-on-primary"
-              className="hidden px-5 py-3 md:inline-flex"
+              aria-label={`Call ${PHONE_NUMBER}`}
+              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-secondary px-2.5 py-2 text-[13px] font-semibold text-white sm:px-3 md:hidden"
             >
-              <Phone className="size-4" />
-              {PHONE_NUMBER}
-            </Button>
+              <Phone className="size-3.5 shrink-0" />
+              <span className="max-[359px]:hidden">{PHONE_NUMBER}</span>
+            </a>
+
+            <span className="hidden md:inline-flex">
+              <Button
+                href={PHONE_HREF}
+                variant="secondary-on-primary"
+                className="whitespace-nowrap px-5 py-3"
+              >
+                <Phone className="size-4 shrink-0" />
+                {PHONE_NUMBER}
+              </Button>
+            </span>
 
             <button
               type="button"
@@ -192,7 +203,7 @@ export default function Header() {
               aria-expanded={isMobileOpen}
               aria-controls="mobile-canvas-menu"
               onClick={() => setIsMobileOpen((open) => !open)}
-              className="text-white lg:hidden"
+              className="inline-flex size-10 shrink-0 items-center justify-center text-white lg:hidden"
             >
               {isMobileOpen ? <X className="size-7" /> : <Menu className="size-7" />}
             </button>

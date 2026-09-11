@@ -62,7 +62,7 @@ export default function SelfPublishingLeadPopup({ blocked = false }: SelfPublish
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto bg-black/55 px-4 pt-10 pb-6 backdrop-blur-sm sm:items-center sm:overflow-hidden sm:p-4"
+      className="fixed inset-0 z-[200] flex items-start justify-center overflow-y-auto bg-black/55 px-4 pt-10 pb-6 font-sans backdrop-blur-sm sm:items-center sm:overflow-hidden sm:p-4"
       role="dialog"
       aria-modal="true"
       aria-labelledby="sp-timed-popup-heading"
@@ -84,7 +84,7 @@ export default function SelfPublishingLeadPopup({ blocked = false }: SelfPublish
         </button>
 
         <div className="flex min-h-[280px] flex-col p-6 pr-12 text-white lg:p-8" style={{ background: `linear-gradient(160deg, ${NAVY} 0%, #332C60 48%, #4B428A 100%)` }}>
-          <h2 id="sp-timed-popup-heading" className="mb-3 font-[800] text-2xl leading-tight tracking-[-0.03em] sm:text-3xl" style={{ fontFamily: "var(--sp-fh), system-ui, sans-serif" }}>
+          <h2 id="sp-timed-popup-heading" className="mb-3 font-sans font-[800] text-2xl leading-tight tracking-[-0.03em] sm:text-3xl">
             Get your free manuscript review
           </h2>
           <div className="mb-6 space-y-3 text-sm text-white/80">

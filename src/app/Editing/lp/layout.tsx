@@ -32,7 +32,7 @@ export default function BookEditingLpLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="lp-standalone min-h-screen overflow-x-clip bg-white text-[#111] font-poppins">
+    <div className="lp-standalone min-h-screen overflow-x-clip bg-white text-[#111] font-sans">
       {children}
     </div>
   );
