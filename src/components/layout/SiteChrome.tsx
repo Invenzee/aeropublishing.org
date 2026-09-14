@@ -5,29 +5,12 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LeadPopupLoader from "@/components/LeadPopupLoader";
 
-const STANDALONE_LP_PREFIXES = [
-  "/cookbook/lp",
-  "/kids/lp",
-  "/editing/lp",
-  "/self-publishing/lp",
-];
-
-function isStandaloneLp(pathname: string | null) {
-  const path = pathname?.toLowerCase() ?? "";
-  return STANDALONE_LP_PREFIXES.some((prefix) => path.startsWith(prefix));
-}
-
 export default function SiteChrome({
   children,
 }: {
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-
-  if (isStandaloneLp(pathname)) {
-    return <>{children}</>;
-  }
-
   const hideLeadPopup = pathname?.toLowerCase() === "/thank-you";
 
   return (
