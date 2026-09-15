@@ -96,7 +96,7 @@ export default function LeadPopup() {
               id="lead-popup-title"
               className="text-[1.75rem] font-bold leading-tight text-white sm:text-[2rem]"
             >
-              Publish Your Book on Amazon With
+              Publish Your Book With
               <br />
               <Highlight className="text-secondary">Aero Publishing</Highlight>
             </h2>
@@ -131,7 +131,7 @@ export default function LeadPopup() {
 
             <img
               src="/menu-img.png"
-              alt="Publish Your Book on Amazon With Aero Publishing"
+              alt="Publish Your Book With Aero Publishing"
               className="absolute bottom-0 left-[50%] w-80 -translate-x-1/2 max-sm:hidden"
             />
           </div>
