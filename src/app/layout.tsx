@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { Figtree, Playfair_Display } from "next/font/google";
 import BingUet from "@/components/BingUet";
+import BingUetPid from "@/components/BingUetPid";
 import SiteChrome from "@/components/layout/SiteChrome";
 import MarketingAttributionCapture from "@/components/MarketingAttributionCapture";
 import ZendeskWidget from "@/components/ZendeskWidget";
@@ -24,11 +26,14 @@ export const metadata: Metadata = {
     "Whether you're writing your first book or expanding your author brand, our publishing experts help you transform your manuscript into a professionally published book.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = (await headers()).get("x-pathname") ?? "";
+  const isThankYou = pathname.replace(/\/+$/, "") === "/thank-you";
+
   return (
     <html
       lang="en"
@@ -36,6 +41,7 @@ export default function RootLayout({
     >
       <body className="flex min-h-full flex-col font-sans">
         <BingUet />
+        {isThankYou ? <BingUetPid /> : null}
         <SiteChrome>{children}</SiteChrome>
         <MarketingAttributionCapture />
         <ZendeskWidget />
