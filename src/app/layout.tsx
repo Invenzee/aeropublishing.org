@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Figtree, Playfair_Display } from "next/font/google";
+import BingUet from "@/components/BingUet";
 import SiteChrome from "@/components/layout/SiteChrome";
 import MarketingAttributionCapture from "@/components/MarketingAttributionCapture";
 import ZendeskWidget from "@/components/ZendeskWidget";
@@ -34,6 +35,7 @@ export default function RootLayout({
       className={`${figtree.variable} ${playfairDisplay.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
+        <BingUet />
         <SiteChrome>{children}</SiteChrome>
         <MarketingAttributionCapture />
         <ZendeskWidget />
