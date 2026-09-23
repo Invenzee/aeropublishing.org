@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
-import { storeBingCustomer } from "@/lib/bing-uet";
 import {
   getMarketingAttribution,
   type LeadFormSource,
@@ -55,7 +54,6 @@ export function useLeadForm(formSource: LeadFormSource) {
         throw new Error(data.error ?? "Unable to send your message. Please try again.");
       }
 
-      storeBingCustomer(email, phone);
       form.reset();
       window.location.href = "/thank-you";
     } catch (error) {
