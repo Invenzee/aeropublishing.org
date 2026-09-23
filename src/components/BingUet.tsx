@@ -1,4 +1,5 @@
 import Script from "next/script";
+import { BING_UET_PID_KEY } from "@/lib/bing-uet";
 
 const BING_UET_TAG = `
 (function(w, d, t, u, o) {
@@ -25,6 +26,15 @@ window.uetq = window.uetq || [];
 window.uetq.push('consent', 'update', {
     'ad_storage': 'granted'
 });
+try {
+    var bingPidRaw = sessionStorage.getItem(${JSON.stringify(BING_UET_PID_KEY)});
+    if (bingPidRaw) {
+        var bingPid = JSON.parse(bingPidRaw);
+        window.uetq = window.uetq || [];
+        window.uetq.push('set', { 'pid': bingPid });
+        sessionStorage.removeItem(${JSON.stringify(BING_UET_PID_KEY)});
+    }
+} catch (e) {}
 `;
 
 export default function BingUet() {
