@@ -15,6 +15,13 @@ body {
   color: #111111;
 }
 
+/* Fixed header: own compositor layer avoids Android Chrome sticky clipping while scrolling */
+.site-header {
+  transform: translateZ(0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
 /* Section spacing — 5px tighter on mobile only */
 .section-y {
   padding-block: 2.6875rem;

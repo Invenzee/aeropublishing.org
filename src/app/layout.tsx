@@ -37,7 +37,7 @@ export default async function RootLayout({
   return (
     <html
       lang="en"
-      className={`${figtree.variable} ${playfairDisplay.variable} h-full antialiased`}
+      className={`${figtree.variable} ${playfairDisplay.variable} min-h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <BingUet />

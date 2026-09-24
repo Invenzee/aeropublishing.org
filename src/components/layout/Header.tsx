@@ -88,7 +88,7 @@ export default function Header() {
 
   return (
     <>
-    <header className="sticky top-0 z-50 bg-primary">
+    <header className="site-header fixed inset-x-0 top-0 z-50 bg-primary">
       <Container>
         <div className="flex h-16 items-center justify-between gap-2 sm:h-20 sm:gap-6">
           <Link href="/" className="shrink-0" aria-label="Aero Publishing home">
