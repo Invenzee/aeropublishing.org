@@ -41,7 +41,7 @@ export default async function RootLayout({
     >
       <body className="flex min-h-full flex-col font-sans">
         <BingUet />
-        {isThankYou ? <BingUetPid /> : null}
+        {/* {isThankYou ? <BingUetPid /> : null} */}
         <SiteChrome>{children}</SiteChrome>
         <MarketingAttributionCapture />
         <ZendeskWidget />
