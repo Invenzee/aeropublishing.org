@@ -10,6 +10,11 @@
   --font-display: var(--font-playfair), ui-serif, Georgia, serif;
 }
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   background: #ffffff;
   color: #111111;
