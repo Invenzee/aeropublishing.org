@@ -36,7 +36,7 @@ const serviceColumns = [
   ],
 ];
 
-const PHONE_NUMBER = "+1 424 282 3304";
+const PHONE_NUMBER = "(424) 282-3304";
 const PHONE_HREF = "tel:+14242823304";
 
 function isActivePath(pathname: string, href: string) {

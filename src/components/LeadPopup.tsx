@@ -111,7 +111,7 @@ export default function LeadPopup() {
                   href="tel:+14242823304"
                   className="mt-1 block text-lg text-white transition-colors hover:text-secondary"
                 >
-                  +1 424 282 3304
+                  (424) 282-3304
                 </a>
               </div>
 

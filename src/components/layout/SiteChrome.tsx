@@ -1,18 +1,11 @@
-"use client";
-
-import { usePathname } from "next/navigation";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import LeadPopupLoader from "@/components/LeadPopupLoader";
 
 export default function SiteChrome({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const hideLeadPopup = pathname?.toLowerCase() === "/thank-you";
-
   return (
     <>
       <a
@@ -26,7 +19,6 @@ export default function SiteChrome({
         {children}
       </main>
       <Footer />
-      {hideLeadPopup ? null : <LeadPopupLoader />}
     </>
   );
 }

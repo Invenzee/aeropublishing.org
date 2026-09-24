@@ -141,7 +141,7 @@ export default function ThankYouClient() {
             </Button>
             <Button href="tel:+14242823304" variant="secondary" className="w-full sm:w-auto">
               <Phone className="size-4" />
-              +1 424 282 3304
+              (424) 282-3304
             </Button>
           </motion.div>
 

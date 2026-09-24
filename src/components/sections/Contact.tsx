@@ -26,7 +26,7 @@ const details: ContactDetail[] = [
   },
   {
     label: "Call Us",
-    value: "+1 424 282 3304",
+    value: "(424) 282-3304",
     href: "tel:+14242823304",
     icon: Phone,
   },

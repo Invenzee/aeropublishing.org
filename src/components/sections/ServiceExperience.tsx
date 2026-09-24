@@ -37,7 +37,7 @@ export default function ServiceExperience({
               <div className="flex flex-wrap gap-3 sm:gap-4">
                 <Button href="tel:+14242823304" variant="secondary">
                   <Phone className="size-4" />
-                  +1 424 282 3304
+                  (424) 282-3304
                 </Button>
                 <Button href="/contact-us" variant="light">
                   <BookOpen className="size-4" />

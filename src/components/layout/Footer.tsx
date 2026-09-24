@@ -102,7 +102,7 @@ export default function Footer() {
                   className="flex items-start gap-2.5 transition-colors hover:text-secondary"
                 >
                   <Phone className="mt-0.5 size-4 shrink-0" />
-                  +1 424 282 3304
+                  (424) 282-3304
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

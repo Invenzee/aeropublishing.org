@@ -258,7 +258,7 @@ export default function PrivacyContent() {
         Email:{" "}
         <a href="mailto:info@aeropublishing.org">info@aeropublishing.org</a>
         <br />
-        Phone: <a href="tel:+14242823304">+1 424 282 3304</a>
+        Phone: <a href="tel:+14242823304">(424) 282-3304</a>
         <br />
         Address: One Towne Square, Suite 1835, Southfield, MI 48076
       </p>
