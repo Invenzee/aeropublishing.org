@@ -1,11 +1,11 @@
 import Script from "next/script";
-import { PHONE_TEL } from "@/lib/site-contact";
+import { US_PHONE_TEL } from "@/lib/site-contact";
 
 const BING_UET_PID = `
 window.uetq = window.uetq || [];
 window.uetq.push('set', { 'pid': {
   'em': 'info@aeropublishing.org',
-  'ph': '${PHONE_TEL}'
+  'ph': '${US_PHONE_TEL}'
 } });
 `;
 

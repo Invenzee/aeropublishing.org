@@ -7,7 +7,7 @@ import Button from "@/components/ui/Button";
 import FormFeedback from "@/components/ui/FormFeedback";
 import Highlight from "@/components/ui/Highlight";
 import { useLeadForm } from "@/hooks/useLeadForm";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { PhoneLinks } from "@/components/PhoneContact";
 
 const POPUP_DELAY_MS = 2500;
 const STORAGE_PREFIX = "aero-lead-popup-dismissed";
@@ -108,12 +108,11 @@ export default function LeadPopup() {
                   <Phone className="size-4 shrink-0" />
                   <span className="text-sm font-normal">Call Us</span>
                 </div>
-                <a
-                  href={PHONE_HREF}
-                  className="mt-1 block text-lg text-white transition-colors hover:text-secondary"
-                >
-                  {PHONE_DISPLAY}
-                </a>
+                <PhoneLinks
+                  variant="stack"
+                  className="mt-1 text-lg"
+                  linkClassName="text-white transition-colors hover:text-secondary"
+                />
               </div>
 
               <div>

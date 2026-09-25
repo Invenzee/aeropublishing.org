@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, MoveRight, Phone } from "lucide-react";
 import Container from "@/components/ui/Container";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { SITE_PHONES } from "@/lib/site-contact";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -97,15 +97,17 @@ export default function Footer() {
                   info@aeropublishing.org
                 </a>
               </li>
-              <li>
-                <a
-                  href={PHONE_HREF}
-                  className="flex items-start gap-2.5 transition-colors hover:text-secondary"
-                >
+              {SITE_PHONES.map((phone) => (
+                <li key={phone.region} className="flex items-start gap-2.5">
                   <Phone className="mt-0.5 size-4 shrink-0" />
-                  {PHONE_DISPLAY}
-                </a>
-              </li>
+                  <a
+                    href={phone.href}
+                    className="transition-colors hover:text-secondary"
+                  >
+                    {phone.region}: {phone.display}
+                  </a>
+                </li>
+              ))}
               <li className="flex items-start gap-2.5">
                 <MapPin className="mt-0.5 size-4 shrink-0" />
                 <span className="max-w-[15rem] leading-6">

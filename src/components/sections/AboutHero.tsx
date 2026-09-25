@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { PhoneLinks } from "@/components/PhoneContact";
 
 export default function AboutHero() {
   return (
@@ -63,12 +63,9 @@ export default function AboutHero() {
                   kelly@solarthirty.online
                 </Link>{" "}
                 |{" "}
-                <Link
-                  href={PHONE_HREF}
-                  className="text-secondary transition-colors hover:text-white"
-                >
-                  {PHONE_DISPLAY}
-                </Link>
+                <PhoneLinks
+                  linkClassName="text-secondary transition-colors hover:text-white"
+                />
               </p>
             </Reveal>
           </div>

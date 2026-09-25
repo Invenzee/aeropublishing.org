@@ -9,7 +9,7 @@ import FormFeedback from "@/components/ui/FormFeedback";
 import Highlight from "@/components/ui/Highlight";
 import Reveal from "@/components/ui/Reveal";
 import { useLeadForm } from "@/hooks/useLeadForm";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { SITE_PHONES } from "@/lib/site-contact";
 
 type ContactDetail = {
   label: string;
@@ -25,12 +25,12 @@ const details: ContactDetail[] = [
     href: "mailto:info@aeropublishing.org",
     icon: Mail,
   },
-  {
-    label: "Call Us",
-    value: PHONE_DISPLAY,
-    href: PHONE_HREF,
+  ...SITE_PHONES.map((phone) => ({
+    label: `Call Us (${phone.region})`,
+    value: phone.display,
+    href: phone.href,
     icon: Phone,
-  },
+  })),
   {
     label: "Working Hours",
     value: "Mon-Friday: 9:00 AM - 6:00 PM",

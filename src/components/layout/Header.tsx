@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { SITE_PHONES } from "@/lib/site-contact";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -175,24 +175,35 @@ export default function Header() {
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-            <a
-              href={PHONE_HREF}
-              aria-label={`Call ${PHONE_DISPLAY}`}
-              className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-secondary px-2.5 py-2 text-[13px] font-semibold text-white sm:px-3 md:hidden"
+            <div
+              className="flex flex-col gap-1 md:hidden"
+              aria-label="Call US or UK"
             >
-              <Phone className="size-3.5 shrink-0" />
-              <span className="max-[359px]:hidden">{PHONE_DISPLAY}</span>
-            </a>
+              {SITE_PHONES.map((phone) => (
+                <a
+                  key={phone.region}
+                  href={phone.href}
+                  className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-secondary px-2.5 py-1.5 text-[11px] font-semibold leading-tight text-white sm:px-3 sm:text-[12px]"
+                >
+                  <Phone className="size-3 shrink-0" />
+                  <span className="max-[359px]:hidden">{phone.display}</span>
+                  <span className="min-[360px]:hidden">{phone.region}</span>
+                </a>
+              ))}
+            </div>
 
-            <span className="hidden md:inline-flex">
-              <Button
-                href={PHONE_HREF}
-                variant="secondary-on-primary"
-                className="whitespace-nowrap px-5 py-3"
-              >
-                <Phone className="size-4 shrink-0" />
-                {PHONE_DISPLAY}
-              </Button>
+            <span className="hidden md:inline-flex md:flex-wrap md:gap-2">
+              {SITE_PHONES.map((phone) => (
+                <Button
+                  key={phone.region}
+                  href={phone.href}
+                  variant="secondary-on-primary"
+                  className="whitespace-nowrap px-3 py-3 text-xs lg:px-5 lg:text-sm"
+                >
+                  <Phone className="size-4 shrink-0" />
+                  {phone.display}
+                </Button>
+              ))}
             </span>
 
             <button
@@ -304,11 +315,19 @@ export default function Header() {
           </div>
         </nav>
 
-        <div className="border-t border-white/15 px-4 py-5">
-          <Button href={PHONE_HREF} variant="secondary-on-primary" fullWidth className="px-5 py-3">
-            <Phone className="size-4" />
-            {PHONE_DISPLAY}
-          </Button>
+        <div className="flex flex-col gap-2 border-t border-white/15 px-4 py-5">
+          {SITE_PHONES.map((phone) => (
+            <Button
+              key={phone.region}
+              href={phone.href}
+              variant="secondary-on-primary"
+              fullWidth
+              className="px-5 py-3"
+            >
+              <Phone className="size-4" />
+              {phone.display}
+            </Button>
+          ))}
         </div>
       </aside>
     </>

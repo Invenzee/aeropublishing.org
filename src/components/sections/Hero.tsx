@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { MessageCircle, Phone } from "lucide-react";
+import { MessageCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -10,7 +10,7 @@ import FormFeedback from "@/components/ui/FormFeedback";
 import Highlight from "@/components/ui/Highlight";
 import Reveal from "@/components/ui/Reveal";
 import { useLeadForm } from "@/hooks/useLeadForm";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { PhoneCallButtons } from "@/components/PhoneContact";
 
 const inputStyles =
   "w-full rounded-md bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60 outline-none ring-1 ring-inset ring-white/20 focus:ring-secondary";
@@ -86,11 +86,8 @@ export default function Hero({
             </Reveal>
 
             <Reveal variant="up" delay={240}>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                <Button href={PHONE_HREF} variant="secondary">
-                  <Phone className="size-4" />
-                  {PHONE_DISPLAY}
-                </Button>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <PhoneCallButtons />
                 <Button href="/contact-us" variant="primary">
                   <MessageCircle className="size-4" />
                   Publish My Book

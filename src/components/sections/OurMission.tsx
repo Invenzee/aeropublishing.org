@@ -3,13 +3,12 @@ import {
   Globe,
   MessageCircle,
   PenLine,
-  Phone,
   type LucideIcon,
 } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { PhoneCallButtons } from "@/components/PhoneContact";
 
 export type MissionFeature = {
   title: string;
@@ -92,11 +91,8 @@ export default function OurMission({
       </ul>
 
       <Reveal variant="up" delay={400}>
-        <div className="flex flex-wrap gap-3 sm:gap-4">
-          <Button href={PHONE_HREF} variant="secondary">
-            <Phone className="size-4" />
-            {PHONE_DISPLAY}
-          </Button>
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+          <PhoneCallButtons />
           <Button href="/contact-us" variant="primary">
             <MessageCircle className="size-4" />
             Publish My Book

@@ -5,7 +5,7 @@ import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import FormFeedback from "@/components/ui/FormFeedback";
 import { useLeadForm } from "@/hooks/useLeadForm";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
+import { PhoneLinks } from "@/components/PhoneContact";
 
 const fieldStyles =
   "w-full rounded-md border border-black/15 bg-white px-4 py-3 text-md text-black outline-none placeholder:text-black/45 focus:border-secondary";
@@ -35,12 +35,9 @@ export default function ContactPageForm() {
                 kelly@solarthirty.online
               </Link>{" "}
               |{" "}
-              <Link
-                href={PHONE_HREF}
-                className="text-secondary transition-colors hover:text-primary"
-              >
-                {PHONE_DISPLAY}
-              </Link>
+              <PhoneLinks
+                linkClassName="text-secondary transition-colors hover:text-primary"
+              />
             </p>
           </div>
 

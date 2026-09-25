@@ -1,10 +1,10 @@
-import { BadgeCheck, Globe, MessageCircle, Phone } from "lucide-react";
+import { BadgeCheck, Globe, MessageCircle } from "lucide-react";
+import { PhoneCallButtons } from "@/components/PhoneContact";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Highlight from "@/components/ui/Highlight";
 import Reveal from "@/components/ui/Reveal";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 const features = [
   {
@@ -80,11 +80,8 @@ export default function ReadyToPublish() {
             </ul>
 
             <Reveal variant="up" delay={360}>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                <Button href={PHONE_HREF} variant="secondary">
-                  <Phone className="size-4" />
-                  {PHONE_DISPLAY}
-                </Button>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <PhoneCallButtons />
                 <Button href="/contact-us" variant="primary">
                   <MessageCircle className="size-4" />
                   Publish My Book

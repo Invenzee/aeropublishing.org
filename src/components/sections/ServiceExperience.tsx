@@ -1,8 +1,8 @@
-import { BookOpen, Phone } from "lucide-react";
+import { BookOpen } from "lucide-react";
+import { PhoneCallButtons } from "@/components/PhoneContact";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
-import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 export type ServiceExperienceProps = {
   title: React.ReactNode;
@@ -35,11 +35,8 @@ export default function ServiceExperience({
             ))}
 
             <Reveal variant="up" delay={80 + paragraphs.length * 70}>
-              <div className="flex flex-wrap gap-3 sm:gap-4">
-                <Button href={PHONE_HREF} variant="secondary">
-                  <Phone className="size-4" />
-                  {PHONE_DISPLAY}
-                </Button>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4">
+                <PhoneCallButtons />
                 <Button href="/contact-us" variant="light">
                   <BookOpen className="size-4" />
                   Publish My Book
