@@ -2,6 +2,7 @@ import { BookOpen, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 export type ServiceExperienceProps = {
   title: React.ReactNode;
@@ -35,9 +36,9 @@ export default function ServiceExperience({
 
             <Reveal variant="up" delay={80 + paragraphs.length * 70}>
               <div className="flex flex-wrap gap-3 sm:gap-4">
-                <Button href="tel:+14242823304" variant="secondary">
+                <Button href={PHONE_HREF} variant="secondary">
                   <Phone className="size-4" />
-                  (424) 282-3304
+                  {PHONE_DISPLAY}
                 </Button>
                 <Button href="/contact-us" variant="light">
                   <BookOpen className="size-4" />

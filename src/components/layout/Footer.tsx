@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, MoveRight, Phone } from "lucide-react";
 import Container from "@/components/ui/Container";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 const quickLinks = [
   { label: "Home", href: "/" },
@@ -98,11 +99,11 @@ export default function Footer() {
               </li>
               <li>
                 <a
-                  href="tel:+14242823304"
+                  href={PHONE_HREF}
                   className="flex items-start gap-2.5 transition-colors hover:text-secondary"
                 >
                   <Phone className="mt-0.5 size-4 shrink-0" />
-                  (424) 282-3304
+                  {PHONE_DISPLAY}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">

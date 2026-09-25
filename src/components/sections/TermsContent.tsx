@@ -1,4 +1,5 @@
 import PolicyContent from "@/components/sections/PolicyContent";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 export default function TermsContent() {
   return (
@@ -276,7 +277,7 @@ export default function TermsContent() {
         Email:{" "}
         <a href="mailto:info@aeropublishing.org">info@aeropublishing.org</a>
         <br />
-        Phone: <a href="tel:+14242823304">(424) 282-3304</a>
+        Phone: <a href={PHONE_HREF}>{PHONE_DISPLAY}</a>
         <br />
         Address: One Towne Square, Suite 1835, Southfield, MI 48076
       </p>

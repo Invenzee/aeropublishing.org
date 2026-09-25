@@ -3,6 +3,7 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { BookOpen, Check, Clock, Mail, Phone } from "lucide-react";
 import Button from "@/components/ui/Button";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 import Container from "@/components/ui/Container";
 import Eyebrow from "@/components/ui/Eyebrow";
 import Highlight from "@/components/ui/Highlight";
@@ -139,9 +140,9 @@ export default function ThankYouClient() {
             <Button href="/" variant="primary" className="w-full sm:w-auto">
               Back to Home
             </Button>
-            <Button href="tel:+14242823304" variant="secondary" className="w-full sm:w-auto">
+            <Button href={PHONE_HREF} variant="secondary" className="w-full sm:w-auto">
               <Phone className="size-4" />
-              (424) 282-3304
+              {PHONE_DISPLAY}
             </Button>
           </motion.div>
 

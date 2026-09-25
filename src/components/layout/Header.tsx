@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, Phone, X } from "lucide-react";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -35,9 +36,6 @@ const serviceColumns = [
     { label: "Video Trailer", href: "/video-trailer" },
   ],
 ];
-
-const PHONE_NUMBER = "(424) 282-3304";
-const PHONE_HREF = "tel:+14242823304";
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/") {
@@ -179,11 +177,11 @@ export default function Header() {
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <a
               href={PHONE_HREF}
-              aria-label={`Call ${PHONE_NUMBER}`}
+              aria-label={`Call ${PHONE_DISPLAY}`}
               className="inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg bg-secondary px-2.5 py-2 text-[13px] font-semibold text-white sm:px-3 md:hidden"
             >
               <Phone className="size-3.5 shrink-0" />
-              <span className="max-[359px]:hidden">{PHONE_NUMBER}</span>
+              <span className="max-[359px]:hidden">{PHONE_DISPLAY}</span>
             </a>
 
             <span className="hidden md:inline-flex">
@@ -193,7 +191,7 @@ export default function Header() {
                 className="whitespace-nowrap px-5 py-3"
               >
                 <Phone className="size-4 shrink-0" />
-                {PHONE_NUMBER}
+                {PHONE_DISPLAY}
               </Button>
             </span>
 
@@ -309,7 +307,7 @@ export default function Header() {
         <div className="border-t border-white/15 px-4 py-5">
           <Button href={PHONE_HREF} variant="secondary-on-primary" fullWidth className="px-5 py-3">
             <Phone className="size-4" />
-            {PHONE_NUMBER}
+            {PHONE_DISPLAY}
           </Button>
         </div>
       </aside>

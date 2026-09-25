@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import Reveal from "@/components/ui/Reveal";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 export default function AboutHero() {
   return (
@@ -63,10 +64,10 @@ export default function AboutHero() {
                 </Link>{" "}
                 |{" "}
                 <Link
-                  href="tel:+19477685974"
+                  href={PHONE_HREF}
                   className="text-secondary transition-colors hover:text-white"
                 >
-                  (947) 768-5974
+                  {PHONE_DISPLAY}
                 </Link>
               </p>
             </Reveal>

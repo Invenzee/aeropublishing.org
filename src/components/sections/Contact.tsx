@@ -9,6 +9,7 @@ import FormFeedback from "@/components/ui/FormFeedback";
 import Highlight from "@/components/ui/Highlight";
 import Reveal from "@/components/ui/Reveal";
 import { useLeadForm } from "@/hooks/useLeadForm";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 type ContactDetail = {
   label: string;
@@ -26,8 +27,8 @@ const details: ContactDetail[] = [
   },
   {
     label: "Call Us",
-    value: "(424) 282-3304",
-    href: "tel:+14242823304",
+    value: PHONE_DISPLAY,
+    href: PHONE_HREF,
     icon: Phone,
   },
   {

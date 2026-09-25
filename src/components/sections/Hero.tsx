@@ -10,6 +10,7 @@ import FormFeedback from "@/components/ui/FormFeedback";
 import Highlight from "@/components/ui/Highlight";
 import Reveal from "@/components/ui/Reveal";
 import { useLeadForm } from "@/hooks/useLeadForm";
+import { PHONE_DISPLAY, PHONE_HREF } from "@/lib/site-contact";
 
 const inputStyles =
   "w-full rounded-md bg-white/10 px-4 py-3 text-sm text-white placeholder:text-white/60 outline-none ring-1 ring-inset ring-white/20 focus:ring-secondary";
@@ -86,9 +87,9 @@ export default function Hero({
 
             <Reveal variant="up" delay={240}>
               <div className="flex flex-wrap gap-3 sm:gap-4">
-                <Button href="tel:+14242823304" variant="secondary">
+                <Button href={PHONE_HREF} variant="secondary">
                   <Phone className="size-4" />
-                  (424) 282-3304
+                  {PHONE_DISPLAY}
                 </Button>
                 <Button href="/contact-us" variant="primary">
                   <MessageCircle className="size-4" />
