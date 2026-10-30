@@ -24,6 +24,9 @@ export const metadata: Metadata = {
   title: "Aero Publishing | We Publish More Than Books, We Publish Legacies",
   description:
     "Whether you're writing your first book or expanding your author brand, our publishing experts help you transform your manuscript into a professionally published book.",
+  verification: {
+    google: "nlwCGWG98-cHbru1Kz5iY295f4iRJu8tXj0bGZiMVSU",
+  },
 };
 
 export default async function RootLayout({
