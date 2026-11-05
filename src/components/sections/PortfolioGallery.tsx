@@ -18,9 +18,9 @@ export default function PortfolioGallery() {
                 <Image
                   src={book.src}
                   alt={book.alt}
-                  width={280}
-                  height={420}
-                  className="aspect-[2/3] w-full object-cover"
+                  width={300}
+                  height={500}
+                  className="aspect-[3/5] h-auto w-full object-contain"
                   loading="lazy"
                 />
               </div>

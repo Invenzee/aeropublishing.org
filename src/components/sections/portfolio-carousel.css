@@ -1,12 +1,12 @@
 .portfolio-carousel {
   perspective: 1200px;
-  padding-top: 5%;
+  padding-block: 3rem 2rem;
   font-size: 0;
 }
 
 .portfolio-carousel__spinner {
   position: relative;
-  height: 22rem;
+  aspect-ratio: 2 / 1;
   margin: 0;
   transform-style: preserve-3d;
   transform-origin: 50% 50% -260px;
@@ -15,7 +15,7 @@
 
 .portfolio-carousel__item {
   position: absolute;
-  left: 40%;
+  left: 37.5%;
   width: 25%;
   max-width: 400px;
   margin: 0;
@@ -65,14 +65,10 @@
 
 @media (min-width: 768px) {
   .portfolio-carousel__spinner {
-    height: 20rem;
     transform-origin: 50% 50% -600px;
   }
 
   .portfolio-carousel__item {
     transform-origin: 50% 50% -400px;   
-  }
-  .portfolio-carousel{
-    overflow: hidden;
   }
 }

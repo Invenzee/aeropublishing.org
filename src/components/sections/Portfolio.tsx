@@ -147,11 +147,12 @@ export default function Portfolio() {
                     <Image
                       src={book.src}
                       alt={book.alt}
-                      width={500}
-                      height={750}
+                      width={300}
+                      height={500}
+                      sizes="(max-width: 1140px) 26vw, 300px"
                       quality={75}
                       loading={index === 0 ? "eager" : "lazy"}
-                      className="aspect-[2/3] w-full object-cover"
+                      className="aspect-[3/5] h-auto w-full object-contain"
                     />
                     <figcaption className="portfolio-carousel__caption">
                       {book.caption}
