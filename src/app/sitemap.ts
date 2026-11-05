@@ -14,6 +14,7 @@ const ROUTES: Array<{
   { path: "/book-publishing", changeFrequency: "monthly", priority: 0.9 },
   { path: "/book-editing", changeFrequency: "monthly", priority: 0.9 },
   { path: "/book-marketing", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/book-signing", changeFrequency: "monthly", priority: 0.8 },
   { path: "/ghost-writing", changeFrequency: "monthly", priority: 0.8 },
   { path: "/book-cover-design", changeFrequency: "monthly", priority: 0.8 },
   { path: "/book-formatting", changeFrequency: "monthly", priority: 0.8 },

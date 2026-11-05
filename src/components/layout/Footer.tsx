@@ -13,6 +13,7 @@ const quickLinks = [
 
 const footerServices = [
   { label: "Book Marketing", href: "/book-marketing" },
+  { label: "Book Signing", href: "/book-signing" },
   { label: "Book Formatting", href: "/book-formatting" },
   { label: "Book Editing", href: "/book-editing" },
   { label: "Book Cover Design", href: "/book-cover-design" },

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import type { ReactNode } from "react";
 import Button from "@/components/ui/Button";
@@ -24,6 +25,8 @@ export type HeroProps = {
   formTitle?: string;
   formSubmitLabel?: string;
   classname?: string;
+  variant?: "default" | "background";
+  ctaLabel?: string;
 };
 
 const defaultTitle = (
@@ -54,19 +57,37 @@ export default function Hero({
   formTitle = "Start Your Publishing Journey Today",
   formSubmitLabel = "Request Consultation",
   classname = "",
+  variant = "default",
+  ctaLabel = "Publish My Book",
 }: HeroProps) {
   const { handleSubmit, isLoading, isSuccess, errorMessage } = useLeadForm("hero");
+  const hasBackground = variant === "background";
 
   return (
-    <section className="relative overflow-hidden bg-white">
-      <div className="pointer-events-none absolute inset-0 max-lg:hidden" aria-hidden>
-        <img
-          src={imageSrc}
-          alt={imageAlt}
-          className={`absolute right-0 ${classname}`}
-          width={800}
-        />
-      </div>
+    <section className={`relative overflow-hidden ${hasBackground ? "bg-primary" : "bg-white"}`}>
+      {hasBackground ? (
+        <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+          <Image
+            src={imageSrc}
+            alt=""
+            fill
+            preload
+            sizes="100vw"
+            className="object-cover object-[65%_center]"
+          />
+          <div className="absolute inset-0 bg-black/65" />
+          <div className="absolute inset-0 bg-linear-to-r from-primary/90 via-primary/40 to-transparent" />
+        </div>
+      ) : (
+        <div className="pointer-events-none absolute inset-0 max-lg:hidden" aria-hidden>
+          <img
+            src={imageSrc}
+            alt={imageAlt}
+            className={`absolute right-0 ${classname}`}
+            width={800}
+          />
+        </div>
+      )}
 
       <Container className="relative">
         <div className="grid gap-10 section-y-content md:gap-12 lg:grid-cols-2 lg:gap-16">
@@ -76,28 +97,28 @@ export default function Hero({
             </Reveal>
 
             <Reveal variant="up" delay={80}>
-              <h1 className="text-[2rem] font-bold leading-[1.1] tracking-tight text-black sm:text-4xl lg:text-[54px]">
+              <h1 className={`text-[2rem] font-bold leading-[1.1] tracking-tight sm:text-4xl lg:text-[54px] ${hasBackground ? "text-white" : "text-black"}`}>
                 {title}
               </h1>
             </Reveal>
 
             <Reveal variant="up" delay={160}>
-              <div className="max-w-xl text-base leading-7 text-black">{description}</div>
+              <div className={`max-w-xl text-base leading-7 ${hasBackground ? "text-white/90" : "text-black"}`}>{description}</div>
             </Reveal>
 
             <Reveal variant="up" delay={240}>
               <div className="flex flex-wrap items-center gap-3 sm:gap-4">
                 <PhoneCallButtons />
-                <Button href="/contact-us" variant="primary">
+                <Button href="/contact-us" variant={hasBackground ? "light" : "primary"}>
                   <MessageCircle className="size-4" />
-                  Publish My Book
+                  {ctaLabel}
                 </Button>
               </div>
             </Reveal>
           </div>
 
           <Reveal variant="right" delay={180} className="lg:pl-6">
-            <div className="rounded-xl bg-primary/95 p-5 shadow-xl sm:p-6">
+            <div className={`rounded-xl bg-primary/95 p-5 shadow-xl sm:p-6 ${hasBackground ? "border border-white/20 backdrop-blur-sm" : ""}`}>
               <h2 className="text-2xl font-semibold leading-snug text-white sm:text-3xl">
                 {formTitle}
               </h2>
