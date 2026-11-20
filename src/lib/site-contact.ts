@@ -1,5 +1,5 @@
-export const US_PHONE_DISPLAY = "(424) 282-3304";
-export const US_PHONE_TEL = "+14242823304";
+export const US_PHONE_DISPLAY = "(424) 286-8260";
+export const US_PHONE_TEL = "+14242868260";
 export const US_PHONE_HREF = `tel:${US_PHONE_TEL}`;
 
 export type SitePhone = {
