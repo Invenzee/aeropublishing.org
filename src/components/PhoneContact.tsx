@@ -43,7 +43,7 @@ type PhoneCallButtonsProps = {
   fullWidth?: boolean;
 };
 
-/** Paired call CTAs for heroes and sections. */
+/** Call CTAs for heroes and sections. */
 export function PhoneCallButtons({
   variant = "secondary",
   className = "flex flex-wrap gap-3 sm:gap-4",

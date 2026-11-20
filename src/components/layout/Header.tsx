@@ -178,7 +178,7 @@ export default function Header() {
           <div className="flex shrink-0 items-center gap-2 sm:gap-3">
             <div
               className="flex flex-col gap-1 md:hidden"
-              aria-label="Call US or UK"
+              aria-label="Call Aero Publishing"
             >
               {SITE_PHONES.map((phone) => (
                 <a
